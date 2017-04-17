@@ -10,3 +10,5 @@ This config is heavily based on [Zedjones' configs](https://github.com/Zedjones/
 [Startpage is tab-a-startpage](https://github.com/KorySchneider/tab-a-startpage) 
 
 [Stylish for startpage here](https://gist.github.com/SlyCedix/9e6c641bc99f4c0b3e9d4b8dd1f85b38)
+
+I am also using lxsession & lxappearance to customize all colors of the adapta-nokoto-eta gtk theme to better match the rest of my setup
