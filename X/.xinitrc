@@ -7,7 +7,7 @@
 if [[ -f ~/.extend.xinitrc ]];then
 	. ~/.extend.xinitrc
 else
-	DEFAULT_SESSION=xfce4-session
+	DEFAULT_SESSION=lxsession
 fi
 
 get_session(){

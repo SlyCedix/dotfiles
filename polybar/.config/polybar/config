@@ -11,7 +11,7 @@ background-alt = ${xrdb:color1}
 background-unf = ${xrdb:color0}
 background-mod0 = ${xrdb:color1}
 background-mod1 = ${xrdb:color2}
-background-mod2 =  ${xrdb:color4}
+background-mod2 = ${xrdb:color4}
 background-alrt = ${xrdb:color6}
 
 foreground = ${xrdb:color7}

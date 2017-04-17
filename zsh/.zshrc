@@ -2,14 +2,13 @@
   export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/sly/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-export labs=/home/zedjones/Documents/CS2/Labs/
 export WM=i3-gaps
 
 #autostart wal
@@ -88,9 +87,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias minecraft="java -jar /home/sly/.minecraft/launcher.jar"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 plugins=(zsh-syntax-highlighting)
-source /home/sly/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

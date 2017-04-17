@@ -1,0 +1,20 @@
+#!/bin/bash
+sleep 0.5
+scrot /tmp/temp-scrot.png
+xclip -selection clipboard -t image/png -i /tmp/temp-scrot.png
+mv /tmp/temp-scrot.png ~/Pictures/scrot/scrot-$(date +%F-%H-%M-%S).png
+
+##!/bin/bash
+#sleep 0.5
+#scrot /tmp/temp-full.png
+#convert -crop 50%x100% /tmp/temp-full.png /tmp/temp-halved-%d.png
+
+##display temp-halved-1 on monitor 0
+##display temp-halved-2 on monitor 1
+
+#scrot -s /tmp/temp-scrot.png
+#xclip -selection clipboard -t image/png -i /tmp/temp-scrot.png
+
+##close temp-halved* displays on monitor*
+
+#mv /tmp/temp-scrot.png ~/Pictures/scrot/scrot-$(date +%F-%H-%M-%S)
