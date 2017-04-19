@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
   export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
+  export DEV=/run/media/sly/Data/Projects
 
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
