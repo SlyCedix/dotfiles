@@ -39,7 +39,7 @@ border-top = 10
 border-color = #00000000
 
 padding-left = 0 
-padding-right = 5 
+padding-right = 3 
 
 module-margin-left = 0 
 module-margin-right = 0 

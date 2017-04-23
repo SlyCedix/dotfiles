@@ -79,13 +79,13 @@
                        "x": 0,
                        "y": 0
                     },
-                    "name": "tty-clock -D",
+                    "name": "tty-clock",
                     "percent": 0.183333333333333,
                     "swallows": [
                        {
                         "class": "^URxvt$",
                         "instance": "^clockterm$",
-                        "title": "^tty\\-clock\\ \\-D$",
+                        "title": "^tty-clock$",
                         "transient_for": "^$"
                        }
                     ],

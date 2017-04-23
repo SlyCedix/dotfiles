@@ -6,7 +6,7 @@ sleep 1
 (urxvt -name weeterm -e 'weechat'&)
 (urxvt -name alsaterm -e 'alsamixer'&)
 (urxvt -name cavaterm -e 'cava'&)
-(urxvt -name clockterm -e 'tty-clock -D'&)
+(urxvt -name clockterm -e 'tty-clock'&)
 (urxvt -name htopterm -e 'htop'&)
 
 sleep 1
