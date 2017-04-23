@@ -157,7 +157,7 @@ icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16
 
 [frame]
 width = 0
-color = #0b0e32
+color = #1d2935
 
 [shortcuts]
 # Shortcuts are specified as [modifier+][modifier+]...key
@@ -182,18 +182,18 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-background = #0b0e32
-foreground = #d7d4e4
+background = #1d2935
+foreground = #95af6e
 timeout = 10
 
 [urgency_normal]
-background = #0b0e32
-foreground = #d7d4e4
+background = #1d2935
+foreground = #95af6e
 timeout = 10
 
 [urgency_critical]
-background = #0b0e32
-foreground = #d7d4e4
+background = #1d2935
+foreground = #95af6e
 timeout = 0
 
 
