@@ -1,3 +1,8 @@
 #!/bin/bash
-wal -i $1
+
+wpg --set $1.png
+sleep 1
+wal -i $HOME/Pictures/wallpapers/$1.png
 sh $HOME/.config/polybar/launch.sh
+sleep 1
+pkill dunst && dunst -config $HOME/.dotfiles/dunst/dunstrc &
