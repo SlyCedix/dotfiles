@@ -2,7 +2,7 @@ cava/
 compton/
 font/
 ncmpcpp/
-wpgtk/colorbamboo
-wpgtk/colorbamboo_nb
-wpgtk/FlatColor
-wpgtk/LB obtheme pack
+wpgtk/.themes/colorbamboo/
+wpgtk/.themes/colorbamboo_nb/
+wpgtk/.themes/FlatColor/
+wpgtk/.themes/LB obtheme pack/
