@@ -57,7 +57,7 @@ export WM=i3-gaps
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,5 +91,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-plugins=(zsh-syntax-highlighting)
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

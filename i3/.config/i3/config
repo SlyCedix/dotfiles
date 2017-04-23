@@ -57,7 +57,7 @@ exec --no-startup-id xset s off -dpms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/i3/run_wal.sh
 exec --no-startup-id lxsession
-exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
+exec --no-startup-id xautolock -time 15 -locker ~/.config/i3/i3-lock
 exec --no-startup-id sh $HOME/.config/i3/load_info.sh
 
 #special binds
