@@ -13,7 +13,7 @@ ZSH_THEME="agnoster"
 export WM=i3-gaps
 
 #autostart wal
-(wal -r &)
+#(wal -r &)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
