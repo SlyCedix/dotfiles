@@ -1,0 +1,55 @@
+#!/bin/sh
+
+#Prompt user to confirm running this file
+printf "This script will install SlyCedix's dotfiles and afterwards, allow you to set up some other fun stuff\nThe script relies on the pacman package manager from arch linux as well as the aur, so arch is a requirements\n"
+read -r -p "Would you like to procede [y/N]:" response
+case "$response" in
+    [Yy])
+        sleep 1
+        ;;
+    *)
+        exit 
+        ;;
+esac
+
+#Requirements for batch installs later
+
+#Check if git exists on the system, if not, install it
+
+check='pacman -Qs git'
+
+if [ -n "$x" ]
+  then sudo pacman -S git
+  else printf "Found git, skipping\n"
+fi
+
+#Check if yaourt exists on the system, if not, install it
+
+check='pacman -Qs yaourt'
+
+if [ -n "$x" ]
+  then sudo pacman -S yaourt
+  else printf "Found yaourt, skipping\n"
+fi
+
+
+#Install all necessary packages
+
+sudo pacman -R i3-wm && sudo pacman -S stow i3-gaps lightdm wpgtk polybar dunst zsh
+
+yaourt -S oh-my-zsh-git
+
+#Change Shell
+
+chsh -s zsh
+
+#Stow configuration files
+
+stow dunst
+stow scripts
+stow wpgtk
+stow zsh
+stow polybar
+stow schemes
+stow vim
+stow X
