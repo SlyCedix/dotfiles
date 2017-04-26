@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #Prompt user to confirm running this file
+
 printf "This script will install SlyCedix's dotfiles and afterwards, allow you to set up some other fun stuff\nThe script relies on the pacman package manager from arch linux as well as the aur, so arch is a requirements\n"
 read -r -p "Would you like to procede [y/N]:" response
 case "$response" in
@@ -35,21 +36,25 @@ fi
 
 #Install all necessary packages
 
-sudo pacman -R i3-wm && sudo pacman -S stow i3-gaps lightdm wpgtk polybar dunst zsh
+sudo pacman -R i3-wm
+
+sudo pacman -S stow i3-gaps lightdm wpgtk polybar dunst zsh
 
 yaourt -S oh-my-zsh-git
 
 #Change Shell
 
-chsh -s zsh
+chsh -s /bin/zsh
 
 #Stow configuration files
 
+stow wpgtk
+stow schemes
 stow dunst
 stow scripts
-stow wpgtk
 stow zsh
 stow polybar
-stow schemes
 stow vim
 stow X
+
+
