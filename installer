@@ -1,60 +1,160 @@
 #!/bin/sh
 
-#Prompt user to confirm running this file
+# Array of packages to install
+packages=(
+    # Shell Packages
+    "zsh"                               # Shell replacement
+    "zsh-syntax-highlighting"           # Oh-my-zsh plugin
 
-printf "This script will install SlyCedix's dotfiles and afterwards, allow you to set up some other fun stuff\nThe script relies on the pacman package manager from arch linux as well as the aur, so arch is a requirements\n"
-read -r -p "Would you like to procede [y/N]:" response
-case "$response" in
-    [Yy])
-        sleep 1
-        ;;
-    *)
-        exit 
-        ;;
-esac
+    # Basic Packages
+    "rxvt-unicode-256xresources"        # Terminal emulator
+    "ranger"                            # File explorer
+    "neofetch"                          # Information fetcher
+    "cairo-infinality-ultimate"         # Font rendering improvements
+    "fontconfig-infinality-ultimate"    # Font rendering improvements
+    "freetype2-infinality-ultimate"     # Font rendering improvements
+    "ttf-font-awesome"                  # Icon font
+    "ttf-input"                         # Mono font of choice
+    "wget"                              # Used to directly download files from the internet
+    "unzip"                             # Zip extraction
+    "unrar"                             # Rar extraction
+    "p7zip"                             # 7z extraction
+    "xclip"                             # Clipboard manipulation
 
-#Requirements for batch installs later
+    # Window management
+    "i3-gaps"                           # Window manager
+    "polybar"                           # Workspace display and info bar
+    "compton"                           # Compositer
+    "rofi"                              # Run menu
+    "dunst"                             # Notification daemon
+    "lightdm"                           # Simple display manager
+    "lightdm-gtk-greeter"               # Greeter for lightdm
+    "oomox-git"                         # Numix gtk theme with color changing support
 
-#Check if git exists on the system, if not, install it
+    # Internet Packages
+    "firefox"                           # Mozilla web browser
 
-check='pacman -Qs git'
+    # Imaging Packages
+    "feh"                               # Image viewer and background manager
+    "scrot"                             # Screenshotter
+    "imagemagick"
 
-if [ -n "$x" ]
-  then sudo pacman -S git
-  else printf "Found git, skipping\n"
+    # Music Packages
+    "ncmpcpp"                           # Ncurses based music player
+    "cava-git"                          # Console based audio visualizer
+    "mopidy"                            # Python based music server daemon
+
+    # Communication Packages
+    "discord"                           # VoIP client
+)
+
+# Array of stows to install
+stows=(
+    # Home folder stow
+    "bin--home"
+    "cava--home"
+    "dunst--home"
+    "i3--home"
+    "ncmpcpp--home"
+    "pacaur--home"
+    "polybar--home"
+    "vim--home"
+    "wpgtk--home"
+    "x--home"
+    "zsh--home"
+
+    # Root folder stows
+    "mopidy--root"
+    "pacman--root"
+)
+
+# Ask for super user
+sudo -v
+
+# Verify script dependencies
+sudo pacman -S --needed --noconfirm base-devel git stow
+
+# Remove conflicts
+rm -rf ~/bin
+rm -rf ~/.config/i3
+rm -rf ~/.config/cava
+rm -rf ~/.config/dunst
+rm -rf ~/.ncmpcpp
+rm -rf ~/.config/polybar
+rm -rf ~/.vimrc
+rm -rf ~/.themes
+rm -rf ~/.wallpapers
+rm -rf .Xresources
+rm -rf .zshrc
+
+sudo rm -rf /etc/pacman.conf
+
+# Install stows
+for i  in ${stows[@]}; do
+    if [[ $(echo ${i} | grep "\--home") != "" ]]; then
+        stow -d ~/dotfiles -t ~ ${i}
+    elif [[ $(echo ${i} | grep "\--root") != "" ]]; then
+        sudo stow -d ~/dotfiles -t / ${i}
+    fi
+
+    echo "${i} stow installed"
+done
+
+# Increase /tmp size to build all packages
+sudo mount -o remount,size=4G,noatime /tmp
+
+# Fetch cower key
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
+
+# Fetch infinality key
+sudo pacman-key -r 962DDE58
+sudo pacman-key -f 962DDE58
+sudo pacman-key --lsign-key 962DDE58
+
+# Synchronize repos
+sudo pacman -Sy
+
+# Build git packages
+if [[ $(pacman -Qs pacaur) == "" ]]; then
+    buildRoot="/tmp/buildroot"
+
+    #Prepepar build directory
+    mkdir -p "${builRoot}"
+    cd "${buildRoot}" || exit 1
+
+    # Retrieve source files
+    git clone "https://aur.archlinux.org/cower.git"
+    git clone "https://aur.archlinux.org/pacaur.git"
+    git clone "git://arcetera.moe/disputils.git"
+
+    # Build cower, a pacaur dependency
+    cd "${buildRoot}/cower" || exit 1
+    makepkg --syncdeps --install --noconfirm
+
+    # Build pacaur, an AUR helper
+    cd "${buildRoot}/pacaur" || exit 1
+    makepkg --syncdeps --install --noconfirm
+
+    # Build disputils, a display utility
+    cd "${buildRoot}/disputils" || exit 1
+    make
+    sudo make install
+
+    # Clean up build directory
+    cd ~ || exit 1
+    rm -rf "${buildRoot}"
 fi
 
-#Check if yaourt exists on the system, if not, install it
+# Install packages from array thhat are not already installed
+for i in ${packages[@]}; do
+    if [[ $(pacman -Qs ${i}) == "" ]]; then
+        pacaur --noedit -S ${i}
+    fi
+done
 
-check='pacman -Qs yaourt'
+# Change shell to zsh
+sudo chsh -s /bin/zsh $(whoami)
 
-if [ -n "$x" ]
-  then sudo pacman -S yaourt
-  else printf "Found yaourt, skipping\n"
-fi
-
-
-#Install all necessary packages
-
-sudo pacman -R i3-wm
-
-sudo pacman -S stow i3-gaps lightdm wpgtk polybar dunst zsh
-
-yaourt -S oh-my-zsh-git
-
-#Change Shell
-
-chsh -s /bin/zsh
-
-#Stow configuration files
-
-stow wpgtk
-stow schemes
-stow dunst
-stow scripts
-stow zsh
-stow polybar
-stow vim
-stow X
-
+# Clear orphaned packages
+sudo pacman -Rns $(pacman -Qtdq)
 
