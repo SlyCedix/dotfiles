@@ -1,3 +1,3 @@
-exec $1
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-exec xrdb ~/.Xresources
+exec $1
