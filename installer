@@ -73,6 +73,7 @@ rm -rf ~/.xinitrc
 rm -f ~/.bash*
 rm -f ~/.zshrc
 rm -rf ~/.zsh
+rm -f ~/.vimrc
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.conf
