@@ -4,8 +4,7 @@
 packages=(
     # Shell Packages
     "zsh"                               # Shell replacement
-    "oh-my-zsh-git"			# ZSH configuration tool
-    "zsh-syntax-highlighting"           # Oh-my-zsh plugin
+    "zsh-syntax-highlighting"           # Zsh plugin
 
     # Basic Packages
     "rxvt-unicode-256xresources"        # Terminal emulator
@@ -72,7 +71,8 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 rm -rf ~/.config/i3
 rm -rf ~/.xinitrc
 rm -f ~/.bash*
-rm -r ~/.zshrc
+rm -f ~/.zshrc
+rm -rf ~/.zsh
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.conf
