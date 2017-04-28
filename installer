@@ -4,6 +4,7 @@
 packages=(
     # Shell Packages
     "zsh"                               # Shell replacement
+    "oh-my-zsh"				# ZSH configuration tool
     "zsh-syntax-highlighting"           # Oh-my-zsh plugin
 
     # Basic Packages
@@ -54,6 +55,7 @@ stows=(
     # Home folder stow
     "i3--home"
     "x--home"
+    "zsh--home"
 
     # Root folder stows
     "pacman--root"
@@ -70,6 +72,7 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 rm -rf ~/.config/i3
 rm -rf ~/.xinitrc
 rm -f ~/.bash*
+rm -r ~/.zshrc
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.conf
