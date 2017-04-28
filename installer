@@ -59,6 +59,7 @@ stows=(
     "vim--home"
     "termite--home"
     "polybar--home"
+    "cava--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
@@ -80,6 +81,7 @@ rm -rf ~/.zsh
 rm -f ~/.vimrc
 rm -rf ~/.config/termite
 rm -rf ~/.config/polybar
+rm -rf ~/.config/cava
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.conf
