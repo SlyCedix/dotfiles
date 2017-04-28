@@ -7,7 +7,7 @@ packages=(
     "zsh-syntax-highlighting"           # Zsh plugin
 
     # Basic Packages
-    "rxvt-unicode-256xresources"        # Terminal emulator
+    "termite"                           # Terminal emulator
     "ranger"                            # File explorer
     "neofetch"                          # Information fetcher
 #    "cairo-infinality-ultimate"         # Font rendering improvements
@@ -56,6 +56,7 @@ stows=(
     "x--home"
     "zsh--home"
     "vim--home"
+    "termite--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
@@ -75,6 +76,7 @@ rm -f ~/.bash*
 rm -f ~/.zshrc
 rm -rf ~/.zsh
 rm -f ~/.vimrc
+rm -rf ~/.config/termite
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.conf
