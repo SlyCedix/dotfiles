@@ -1,1 +1,0 @@
-/home/sly/.themes/color_other/schemes.colors.sh

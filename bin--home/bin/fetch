@@ -1,2 +1,0 @@
-#!/bin/bash
-neofetch --w3m wallpaper --crop_offset southwest 

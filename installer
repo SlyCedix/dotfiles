@@ -51,21 +51,9 @@ packages=(
 # Array of stows to install
 stows=(
     # Home folder stow
-    "bin--home"
-    "cava--home"
-    "dunst--home"
     "i3--home"
-    "ncmpcpp--home"
-    "pacaur--home"
-    "polybar--home"
-    "vim--home"
-    "wpgtk--home"
-    "x--home"
-    "zsh--home"
 
     # Root folder stows
-    "mopidy--root"
-    "pacman--root"
 )
 
 # Ask for super user
@@ -75,17 +63,7 @@ sudo -v
 sudo pacman -S --needed --noconfirm base-devel git stow
 
 # Remove conflicts
-rm -rf ~/bin
 rm -rf ~/.config/i3
-rm -rf ~/.config/cava
-rm -rf ~/.config/dunst
-rm -rf ~/.ncmpcpp
-rm -rf ~/.config/polybar
-rm -rf ~/.vimrc
-rm -rf ~/.themes
-rm -rf ~/.wallpapers
-rm -rf .Xresources
-rm -rf .zshrc
 
 sudo rm -rf /etc/pacman.conf
 
