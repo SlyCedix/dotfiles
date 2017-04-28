@@ -1,3 +1,3 @@
 exec $1
 
-exec xrdb ~/.Xresoures
+exec xrdb ~/.Xresources
