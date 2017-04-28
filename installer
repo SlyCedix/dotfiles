@@ -25,6 +25,7 @@ packages=(
     # Window management
     "i3-gaps"                           # Window manager
     "polybar"                           # Workspace display and info bar
+    "jsoncpp"                           # Dependency for polybar scripts
     "compton"                           # Compositer
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
