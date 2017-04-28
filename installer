@@ -55,7 +55,7 @@ stows=(
     "i3--home"
     "x--home"
     "zsh--home"
-
+    "vim--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
