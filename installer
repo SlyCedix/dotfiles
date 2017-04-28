@@ -4,7 +4,7 @@
 packages=(
     # Shell Packages
     "zsh"                               # Shell replacement
-    "oh-my-zsh"				# ZSH configuration tool
+    "oh-my-zsh-git"			# ZSH configuration tool
     "zsh-syntax-highlighting"           # Oh-my-zsh plugin
 
     # Basic Packages
