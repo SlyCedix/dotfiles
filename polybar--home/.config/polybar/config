@@ -21,8 +21,8 @@ secondary = #c3d48c
 
 
 [bar/bar]
-monitor = ${env:MONITOR:HDMI-0}
-width = 100%
+;monitor = ${env:MONITOR:HDMI-0}
+width = 1366 
 height = 30
 
 fixed-center = true
@@ -103,22 +103,22 @@ label-focused = %icon%
 label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
 label-focused-underline = #fba922
-label-focused-padding = 4
+label-focused-padding =2 
 
 ; Unfocused
 label-unfocused = %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = 2
 
 ; Visible
 label-visible = %icon%
 label-visible-underline = #555555
-label-visible-padding = 4
+label-visible-padding = 2
 
 ; Urgent
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = ${colors.background-alrt}
-label-urgent-padding = 4
+label-urgent-padding = 2
 
 [module/date]
 type = internal/date
