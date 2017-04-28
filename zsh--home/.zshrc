@@ -11,9 +11,6 @@ ZSH_THEME="agnoster"
 
 export WM=i3-gaps
 
-#autostart wal
-(wal -r &)
-
 ENABLE_CORRECTION="true"
 
 plugins=(git zsh-syntax-highlighting extract)
