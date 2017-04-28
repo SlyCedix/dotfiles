@@ -21,6 +21,7 @@ packages=(
     "p7zip"                             # 7z extraction
     "xclip"                             # Clipboard manipulation
     "pygtk"				                # Handles i3-exit script
+    "htop"                              # A better CPU usage viewer
 
     # Window management
     "i3-gaps"                           # Window manager
