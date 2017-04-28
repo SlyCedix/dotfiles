@@ -20,7 +20,7 @@ packages=(
     "unrar"                             # Rar extraction
     "p7zip"                             # 7z extraction
     "xclip"                             # Clipboard manipulation
-    "pygtk"				# Handles i3-exit script
+    "pygtk"				                # Handles i3-exit script
 
     # Window management
     "i3-gaps"                           # Window manager
@@ -28,8 +28,8 @@ packages=(
     "compton"                           # Compositer
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
-    "slim"		                # Slim desktop manager
-    "archlinux-themes-slim"		# Themes for slim desktop manager
+    "slim"		                        # Slim desktop manager
+    "archlinux-themes-slim"		        # Themes for slim desktop manager
     "oomox-git"                         # Numix gtk theme with color changing support
 
     # Internet Packages
@@ -130,9 +130,7 @@ fi
 
 # Install packages from array that are not already installed
 for i in ${packages[@]}; do
-    if [[ $(pacman -Qs ${i}) == "" ]]; then
-        pacaur --noconfirm --noedit -S ${i}
-    fi
+    pacaur --needed --noconfirm --noedit -S ${i}
 done
 
 # Enable slim desktop manager
