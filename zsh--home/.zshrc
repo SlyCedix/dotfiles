@@ -20,4 +20,4 @@ plugins=(git zsh-syntax-highlighting extract)
 
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
