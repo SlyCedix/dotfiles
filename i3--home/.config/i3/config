@@ -152,11 +152,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # workspace outputs
-workspace 1 output HDMI-0
-workspace 2 output HDMI-0
-workspace 3 output HDMI-0
-workspace 9 output DVI-I-1
-workspace 10 output DVI-I-1
+# workspace 1 output HDMI-0
+# workspace 2 output HDMI-0
+# workspace 3 output HDMI-0
+# workspace 9 output DVI-I-1
+# workspace 10 output DVI-I-1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
