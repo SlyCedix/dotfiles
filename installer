@@ -10,9 +10,9 @@ packages=(
     "rxvt-unicode-256xresources"        # Terminal emulator
     "ranger"                            # File explorer
     "neofetch"                          # Information fetcher
-    "cairo-infinality-ultimate"         # Font rendering improvements
-    "fontconfig-infinality-ultimate"    # Font rendering improvements
-    "freetype2-infinality-ultimate"     # Font rendering improvements
+#    "cairo-infinality-ultimate"         # Font rendering improvements
+#    "fontconfig-infinality-ultimate"    # Font rendering improvements
+#    "freetype2-infinality-ultimate"     # Font rendering improvements
     "ttf-font-awesome"                  # Icon font
     "ttf-input"                         # Mono font of choice
     "wget"                              # Used to directly download files from the internet
@@ -20,6 +20,7 @@ packages=(
     "unrar"                             # Rar extraction
     "p7zip"                             # 7z extraction
     "xclip"                             # Clipboard manipulation
+    "pygtk"				# Handles i3-exit script
 
     # Window management
     "i3-gaps"                           # Window manager
@@ -27,8 +28,8 @@ packages=(
     "compton"                           # Compositer
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
-    "lightdm"                           # Simple display manager
-    "lightdm-gtk-greeter"               # Greeter for lightdm
+    "slim"		                # Slim desktop manager
+    "archlinux-themes-slim"		# Themes for slim desktop manager
     "oomox-git"                         # Numix gtk theme with color changing support
 
     # Internet Packages
@@ -52,8 +53,11 @@ packages=(
 stows=(
     # Home folder stow
     "i3--home"
+    "x--home"
 
     # Root folder stows
+    "pacman--root"
+    "slim--root"
 )
 
 # Ask for super user
@@ -64,9 +68,11 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 
 # Remove conflicts
 rm -rf ~/.config/i3
+rm -rf ~/.xinitrc
+rm -f ~/.bash*
 
 sudo rm -rf /etc/pacman.conf
-
+sudo rm -rf /etc/slim.conf
 # Install stows
 for i  in ${stows[@]}; do
     if [[ $(echo ${i} | grep "\--home") != "" ]]; then
@@ -85,9 +91,9 @@ sudo mount -o remount,size=4G,noatime /tmp
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
 
 # Fetch infinality key
-sudo pacman-key -r 962DDE58
-sudo pacman-key -f 962DDE58
-sudo pacman-key --lsign-key 962DDE58
+#sudo pacman-key -r 962DDE58
+#sudo pacman-key -f 962DDE58
+#sudo pacman-key --lsign-key 962DDE58
 
 # Synchronize repos
 sudo pacman -Sy
@@ -97,13 +103,12 @@ if [[ $(pacman -Qs pacaur) == "" ]]; then
     buildRoot="/tmp/buildroot"
 
     #Prepepar build directory
-    mkdir -p "${builRoot}"
+    mkdir -p "${buildRoot}"
     cd "${buildRoot}" || exit 1
 
     # Retrieve source files
     git clone "https://aur.archlinux.org/cower.git"
     git clone "https://aur.archlinux.org/pacaur.git"
-    git clone "git://arcetera.moe/disputils.git"
 
     # Build cower, a pacaur dependency
     cd "${buildRoot}/cower" || exit 1
@@ -113,20 +118,15 @@ if [[ $(pacman -Qs pacaur) == "" ]]; then
     cd "${buildRoot}/pacaur" || exit 1
     makepkg --syncdeps --install --noconfirm
 
-    # Build disputils, a display utility
-    cd "${buildRoot}/disputils" || exit 1
-    make
-    sudo make install
-
     # Clean up build directory
     cd ~ || exit 1
     rm -rf "${buildRoot}"
 fi
 
-# Install packages from array thhat are not already installed
+# Install packages from array that are not already installed
 for i in ${packages[@]}; do
     if [[ $(pacman -Qs ${i}) == "" ]]; then
-        pacaur --noedit -S ${i}
+        pacaur --noconfirm --noedit -S ${i}
     fi
 done
 
