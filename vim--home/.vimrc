@@ -147,7 +147,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme base16 
+  colorscheme base16-default-dark 
 endif
 
 set mousemodel=popup
