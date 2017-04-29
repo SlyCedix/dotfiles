@@ -69,7 +69,8 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 
 # Remove conflicts
 rm -rf ~/.config/i3
-rm -rf ~/.xinitrc
+rm -f ~/.xinitrc
+rm -f ~/.Xresources
 rm -f ~/.bash*
 rm -f ~/.zshrc
 rm -rf ~/.zsh
