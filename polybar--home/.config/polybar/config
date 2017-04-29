@@ -7,9 +7,9 @@ margin-bottom = 100
 
 [colors]
 
-fg = ${xrdb:URxvt*color7}
-modfg = ${xrdb:URxvt*color1}
-bg = ${xrdb:URxvt*color0}
+fg = ${xrdb:color7}
+modfg = ${xrdb:color1}
+bg = ${xrdb:color0}
 
 white = #d1d1d1
 gray = #585858
@@ -27,7 +27,9 @@ wm-restack = i3
 
 fixed-center = true
 
-border-size = 10
+border-top-size = 5
+border-right-size = 10
+border-left-size = 10
 border-color = $00000000
 
 width = 100%
@@ -40,7 +42,7 @@ radius = 0.0
 
 enable-ipc = false
 
-padding-left = 1
+padding-left = 0
 padding-right = 0
 
 module-margin-right = 0
@@ -50,9 +52,9 @@ module-margin-left = 0
 ;modules-center = mpd
 ;modules-left = cpu memory filesystem
 
-modules-right = date battery menu0
-modules-center = mpd
-modules-left = i3 xwindow
+modules-right = battery wlan mpd menu0
+modules-center = i3
+modules-left = date xwindow
 
 background = ${colors.bg}
 foreground = ${colors.fg}
@@ -117,32 +119,32 @@ type = internal/i3
 format = <label-mode> <label-state>
 index-sort = true
 
-label-focused-font = 4
-label-unfocused-font = 4
-label-urgent-font = 4
-label-visible-font = 4 
+label-focused-font = 2
+label-unfocused-font = 2
+label-urgent-font = 2
+label-visible-font = 2
 
 label-focused = 
 ;label-focused = %index%
 ;label-focused-background = ${colors.gray}
-label-focused-padding = 0
+label-focused-padding = 1
 
 label-unfocused = 
 ;label-unfocused = %index%
-label-unfocused-padding = 0
+label-unfocused-padding = 1
 ;label-unfocused-background = ${colors.black}
 label-unfocused-underlinde = ${colors.white}
 
 label-urgent = 
 ;label-urgent = %index%!
 ;label-urgent-background = ${colors.red}
-label-urgent-padding = 0
+label-urgent-padding = 1
 label-urgent-foreground = ${colors.red}
 
 label-visible = 
 ;label-visible = %index%
 label-visible-foreground = ${colors.white}
-label-visible-padding = 0
+label-visible-padding = 1
 
 
 
@@ -369,15 +371,15 @@ type = custom/menu
 format = <label-toggle> <menu>
 ;format-underline = ${colors.white}
 format-padding = 1
-;format-margin = 1
+;format-margin = 0
 
 ;format-background = ${colors.black}
 
-menu-0-0 =  shutdown
+menu-0-0 = "  shutdown "
 menu-0-0-exec = shutdown now
-menu-0-1 =  restart
+menu-0-1 = "  restart "
 menu-0-1-exec = shutdown -r now
-menu-0-2 =   cancel
+menu-0-2 = "  cancel "
 
 
 label-open = 
