@@ -22,7 +22,6 @@ packages=(
     # Window management
     "i3-gaps"                           # Window manager
     "i3lock-color-git"                  # Simple idle locker
-    "i3lock-fancy-git"                  # Simple idle locker
     "jsoncpp"                           # Dependency for polybar scripts
     "libmpdclient"                      # Dependency for polybar scripts
     "polybar"                           # Workspace display and infor bar
