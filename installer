@@ -61,6 +61,7 @@ stows=(
     "cava--home"
     "ncmpcpp--home"
     "mopidy--home"
+    "wallpapers--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
