@@ -39,7 +39,7 @@ for_window [class="Engrampa"] floating enable
 for_window [class="Viewnior"] floating enable
 for_window [class="Pamac-manager"] floating enable
 gaps inner 10
-gaps outer 10
+gaps outer 3
 
 client.focused          $fg     $bg     $fg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
