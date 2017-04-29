@@ -9,10 +9,6 @@ packages=(
     # Basic Packages
     "termite"                           # Terminal emulator
     "ranger"                            # File explorer
-    "neofetch"                          # Information fetcher
-#    "cairo-infinality-ultimate"         # Font rendering improvements
-#    "fontconfig-infinality-ultimate"    # Font rendering improvements
-#    "freetype2-infinality-ultimate"     # Font rendering improvements
     "ttf-font-awesome"                  # Icon font
     "ttf-input"                         # Mono font of choice
     "wget"                              # Used to directly download files from the internet
@@ -109,11 +105,6 @@ sudo mount -o remount,size=4G,noatime /tmp
 
 # Fetch cower key
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
-
-# Fetch infinality key
-#sudo pacman-key -r 962DDE58
-#sudo pacman-key -f 962DDE58
-#sudo pacman-key --lsign-key 962DDE58
 
 # Synchronize repos
 sudo pacman -Sy
