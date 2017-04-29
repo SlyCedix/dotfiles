@@ -137,7 +137,9 @@ fi
 
 # Install packages from array that are not already installed
 for i in ${packages[@]}; do
-    pacaur --needed --noconfirm --noedit -S ${i}
+    if [[ $(pacman -Qs ${i}) == "" ]]; then
+        pacaur --needed --noconfirm --noedit -S ${i}
+    fi
 done
 
 # Enable slim desktop manager
