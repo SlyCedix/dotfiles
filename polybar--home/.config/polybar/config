@@ -28,12 +28,12 @@ wm-restack = i3
 fixed-center = true
 
 border-top-size = 5
-border-right-size = 10
-border-left-size = 10
+border-right-size = 12
+border-left-size = 12
 border-color = $00000000
 
 width = 100%
-height = 25px
+height = 24px
 
 override-redirect = true
 offset-x = 0%
@@ -48,10 +48,6 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-;amodules-right = updates date menu0
-;modules-center = mpd
-;modules-left = cpu memory filesystem
-
 modules-right = battery wlan mpd menu0
 modules-center = i3
 modules-left = date xwindow
@@ -59,15 +55,15 @@ modules-left = date xwindow
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-overline-size = 2
+overline-size = 0
 overline-color = ${colors.white}
-underline-size = 4
+underline-size = 1
 underline-color = ${colors.modfg}
 
-font-0 = xos4terminus:size=10;0
-font-1 = FontAwesome:size=12;0
-font-2 = TakaoGothic:weight=bold:size=12;0
-font-3 = FontAwesome:size=12;0
+font-0 = xos4terminus:size=10;1
+font-1 = FontAwesome:size=12;2
+font-2 = TakaoGothic:weight=bold:size=12;1
+font-3 = FontAwesome:size=12;2
 
 
 [module/xwindow]
@@ -271,14 +267,15 @@ label-disconnected-foreground = ${colors.gray}
 
 [module/date]
 type = internal/date
-date-alt =   %A %H:%M 
-date =   %b/%d/%y %H:%M 
+date-alt =  %A %H:%M 
+date =  %b/%d/%y %H:%M 
 interval = 5
 
 format-underline = ${colors.white}
 format-background = ${colors.bg}
 format-foreground = ${colors.fg}
-format-padding = 2
+format-padding = 1
+
 
 
 [module/volume]
