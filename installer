@@ -63,6 +63,8 @@ stows=(
     # Root folder stows
     "pacman--root"
     "slim--root"
+    "mopidy--root"
+    "pulse--root"
 )
 
 # Ask for super user
@@ -73,18 +75,21 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 
 # Remove conflicts
 rm -rf ~/.config/i3
-rm -f ~/.xinitrc
-rm -f ~/.Xresources
-rm -f ~/.bash*
-rm -f ~/.zshrc
+rm -rf ~/.xinitrc
+rm -rf ~/.Xresources
+rm -rf ~/.bash*
+rm -rf ~/.zshrc
 rm -rf ~/.zsh
-rm -f ~/.vimrc
+rm -rf ~/.vimrc
 rm -rf ~/.config/termite
 rm -rf ~/.config/polybar
 rm -rf ~/.config/cava
 
 sudo rm -rf /etc/pacman.conf
-sudo rm -rf /etc/slim.conf
+sudo rm -rf /etc/slim.confi
+sudo rm -rf /etc/mopidy/mopidy.conf
+sudo rm -rf /etc/pulse/default.pa
+
 # Install stows
 for i  in ${stows[@]}; do
     if [[ $(echo ${i} | grep "\--home") != "" ]]; then
@@ -141,7 +146,10 @@ for i in ${packages[@]}; do
 done
 
 # Enable slim desktop manager
-systemctl enable slim.service
+sudo systemctl enable slim.service
+
+# Enable mopidy music server
+sudo systemctl enable mopidy
 
 # Change shell to zsh
 sudo chsh -s /bin/zsh $(whoami)
