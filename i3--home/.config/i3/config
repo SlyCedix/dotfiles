@@ -50,15 +50,14 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 #startup execs
 exec --no-startup-id compton
-exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
 exec --no-startup-id xset s off -dpms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/i3/run_wal.sh
 exec --no-startup-id xautolock -time 15 -locker ~/.config/i3/i3-lock
-#exec --no-startup-id sh $HOME/.config/i3/load_info.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dunst -config "${HOME}/.dotfiles/dunst/dunstrc"
-exec --no-startup-id feh --bg-scale ${HOME}/.wallpaper
+exec --no-startup-id feh --bg-scale ${HOME}/.wallpapers
+exec --no-startup-id mopidy
+
 
 #special binds
 bindsym Print exec prntscr
@@ -69,7 +68,7 @@ bindsym $mod+Control+E exec ~/.config/i3/i3-lock
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
