@@ -1,0 +1,3 @@
+[submodule "emacs--home/.emacs.d"]
+	path = emacs--home/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs
