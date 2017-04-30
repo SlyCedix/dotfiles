@@ -46,6 +46,9 @@ packages=(
     "cava-git"                          # Console based audio visualizer
     "mopidy"                            # Python based music server daemon
 
+    # Development packages
+    "emacs"                             # Robust editor based around scripting
+
     # Communication Packages
     "discord"                           # VoIP client
 )
@@ -63,6 +66,7 @@ stows=(
     "ncmpcpp--home"
     "mopidy--home"
     "wallpapers--home"
+    "emacs--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
@@ -88,6 +92,8 @@ rm -rf ~/.config/polybar
 rm -rf ~/.config/cava
 rm -rf ~/.ncmpcpp
 rm -rf ~/.config/mopidy
+rm -rf ~/.emacs.d
+rm -rf ~/.emacs
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi
