@@ -33,11 +33,8 @@ set $bg #1d2935
 
 #gaps settings
 for_window [class="^.*"] border pixel 1
-for_window [class="Thunar"] floating enable
 for_window [class="I3-exit" instance="i3-exit"] floating enable
-for_window [class="Engrampa"] floating enable
-for_window [class="Viewnior"] floating enable
-for_window [class="Pamac-manager"] floating enable
+for_window [class="Termite"] floating enable
 gaps inner 10
 gaps outer 3
 
