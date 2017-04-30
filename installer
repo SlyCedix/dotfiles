@@ -16,7 +16,7 @@ packages=(
     "unrar"                             # Rar extraction
     "p7zip"                             # 7z extraction
     "xclip"                             # Clipboard manipulation
-    "pygtk"				                # Handles i3-exit script
+    "pygtk"				                      # Handles i3-exit script
     "htop"                              # A better CPU usage viewer
 
     # Window management
@@ -29,8 +29,8 @@ packages=(
     "compton"                           # Compositer
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
-    "slim"		                        # Slim desktop manager
-    "archlinux-themes-slim"		        # Themes for slim desktop manager
+    "slim"		                          # Slim desktop manager
+    "archlinux-themes-slim"		          # Themes for slim desktop manager
     "oomox-git"                         # Numix gtk theme with color changing support
 
     # Internet Packages
