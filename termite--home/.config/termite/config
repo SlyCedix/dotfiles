@@ -1,33 +1,48 @@
-[options]
-font =          Input Mono 9
-
 [colors]
-background=   #1d1f21
-currentLine=  #282a2e
-selection=    #373b41
-foreground=   #c5c8c6
-comment=      #969896
-red=          #cc6666
-orange=       #de935f
-yellow=       #f0c674
-green=        #b5bd68
-aqua=         #8abeb7
-blue=         #81a2be
-purple=       #b294bb
+# Base16 Tomorrow Night
+# Author: Chris Kempson (http://chriskempson.com)
 
-base00=       #1d1f21
-base01=       #282a2e
-base02=       #373b41
-base03=       #969896
-base04=       #b4b7b4
-base05=       #c5c8c6
-base06=       #e0e0e0
-base07=       #ffffff
-base08=       #cc6666
-base09=       #de935f
-base0A=       #f0c674
-base0B=       #b5bd68
-base0C=       #8abeb7
-base0D=       #81a2be
-base0E=       #b294bb
-base0F=       #a3685a
+foreground      = #c5c8c6
+foreground_bold = #e0e0e0
+cursor          = #e0e0e0
+background      = #1d1f21
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #1d1f21
+color8  = #969896
+color7  = #c5c8c6
+color15 = #ffffff
+
+# Red
+color1  = #cc6666
+color9  = #cc6666
+
+# Green
+color2  = #b5bd68
+color10 = #b5bd68
+
+# Yellow
+color3  = #f0c674
+color11 = #f0c674
+
+# Blue
+color4  = #81a2be
+color12 = #81a2be
+
+# Purple
+color5  = #b294bb
+color13 = #b294bb
+
+# Teal
+color6  = #8abeb7
+color14 = #8abeb7
+
+# Extra colors
+color16 = #de935f
+color17 = #a3685a
+color18 = #282a2e
+color19 = #373b41
+color20 = #b4b7b4
+color21 = #e0e0e0
