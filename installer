@@ -144,6 +144,11 @@ if [[ $(pacman -Qs pacaur) == "" ]]; then
     rm -rf "${buildRoot}"
 fi
 
+# Uninstall yaourt because pacaur is installed 
+if [[ $(pacman -Qs yaourt) ]]; then
+    pacaur -Rs yaourt
+fi
+
 # Install packages from array that are not already installed
 for i in ${packages[@]}; do
     if [[ $(pacman -Qs ${i}) == "" ]]; then
