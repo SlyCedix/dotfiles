@@ -93,7 +93,7 @@ rm -rf ~/.config/cava
 rm -rf ~/.ncmpcpp
 rm -rf ~/.config/mopidy
 rm -rf ~/.emacs.d
-rm -rf ~/.emacs
+rm -rf ~/.spacemacs
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi
