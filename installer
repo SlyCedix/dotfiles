@@ -99,6 +99,9 @@ sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi
 sudo rm -rf /etc/pulse/default.pa
 
+# Remove build directory from aui script
+rm -rf ~/aui_packages
+
 # Install stows
 for i  in ${stows[@]}; do
     if [[ $(echo ${i} | grep "\--home") != "" ]]; then
