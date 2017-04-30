@@ -7,15 +7,15 @@ margin-bottom = 100
 
 [colors]
 
-fg = ${xrdb:foreground}
-bg = ${xrdb:background}
+fg = ${xrdb:*.foreground}
+bg = ${xrdb:*.background}
 
-gray = #585858
-black = #ce1d1d1d
-red = ${xrdb:red}
-blue = ${xrdb:blue}
-yellow = ${xrdb:yellow}
-green = ${xrdb:green}
+gray = ${xrdb:*.color8}
+black = ${xrdb:*.color0}
+red = ${xrdb:*.color1}
+blue = ${xrdb:*.color4}
+yellow = ${xrdb:*.color3}
+green = ${xrdb:*.color6}
 
 
 [bar/bar]
