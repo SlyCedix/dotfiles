@@ -20,6 +20,7 @@ packages=(
     "htop"                              # A better CPU usage viewer
     "todotxt"                           # CLI todo manager based on the todo.txt format
     "dofi-git"                          # Rofi todo manager using todotxt
+    "neofetch"                          # Configurable system info fetcher
 
     # Window management
     "i3-gaps"                           # Window manager
@@ -41,7 +42,8 @@ packages=(
     # Imaging Packages
     "feh"                               # Image viewer and background manager
     "scrot"                             # Screenshotter
-    "imagemagick"
+    "imagemagick"                       # Command line image processor
+    "w3m"                               # Terminal image processor
 
     # Music Packages
     "ncmpcpp"                           # Ncurses based music player
@@ -72,6 +74,7 @@ stows=(
     "dofi--home"
     "todo--home"
     "dunst--home"
+    "neofetch--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
