@@ -181,3 +181,7 @@ sudo chsh -s /bin/zsh $(whoami)
 # Clear orphaned packages
 sudo pacman -Rns $(pacman -Qtdq)
 
+# Tell user how to set up the stylish themes
+printf "Firefox will open shortly to the two extensions you need, as well as the new homepage you should set\n"
+firefox -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/stylish -new-tab -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage -new-tab -url https://koryschneider.github.io/tab-a-startpage/ &
+printf "Once stylish is installed, copy firefox--nostow/firefox-main-style.css and firefox--nostow/firefox-tab-style.css into stylish themes.\n"
