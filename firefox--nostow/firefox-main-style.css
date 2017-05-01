@@ -1,25 +1,9 @@
+@import "file:///home/sly/dotfiles/firefox--nostow/firefox-colors.css";
 @namespace html url(http://www.w3.org/1999/xhtml);
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 :root {
     /* TAB VARIABLES */
-    --color0: #1d1f21;
-    --color1: #282a2e;
-    --color2: #373b41;
-    --color3: #969896;
-    --color4: #b4b7b4;
-    --color5: #c5c8c6;
-    --color6: #e0e0e0;
-    --color7: #ffffff;
-    --color8: #cc6666;
-    --color9: #de935f;
-    --color10: #f0c674;
-    --color11: #b5bd68;
-    --color12: #8abeb7;
-    --color13: #81a2be;
-    --color14: #b294bb;
-    --color15: #a3685a;
-    
     --bg-light: var(--color0); --bg-dark: var(--color0);
     --fg-light: var(--color5); --fg-dark: var(--color5);
     --tab-triangle-correction: -1px;
