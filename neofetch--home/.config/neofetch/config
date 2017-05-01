@@ -1,0 +1,4 @@
+# Image settings
+image_backend="w3m"
+image_source="wallpaper"
+crop_offset="southwest"
