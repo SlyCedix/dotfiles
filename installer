@@ -75,6 +75,8 @@ stows=(
     "todo--home"
     "dunst--home"
     "neofetch--home"
+    "bin--home"
+
     # Root folder stows
     "pacman--root"
     "slim--root"
