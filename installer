@@ -71,6 +71,7 @@ stows=(
     "emacs--home"
     "dofi--home"
     "todo--home"
+    "dunst--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
@@ -105,6 +106,7 @@ rm -rf ~/.emacs.d
 rm -rf ~/.spacemacs
 rm -rf ~/.todo/config
 rm -rf ~/.config/dofi
+rm -rf ~/.config/dunst
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi
