@@ -7,22 +7,19 @@ margin-bottom = 100
 
 [colors]
 
-fg = ${xrdb:color7}
-modfg = ${xrdb:color1}
-bg = ${xrdb:color0}
+fg = ${xrdb:foreground}
+bg = ${xrdb:background}
 
-white = #d1d1d1
 gray = #585858
 black = #ce1d1d1d
-red = #c795ae
-blue = #95aec7
-yellow = #c7ae95
-green = #aec795
+red = ${xrdb:red}
+blue = ${xrdb:blue}
+yellow = ${xrdb:yellow}
+green = ${xrdb:green}
 
 
 [bar/bar]
 bottom = false
-dock = false
 wm-restack = i3
 
 fixed-center = true
@@ -35,79 +32,62 @@ border-color = $00000000
 width = 100%
 height = 24px
 
-override-redirect = true
-offset-x = 0%
-offset-y = 0%
-radius = 0.0
-
-enable-ipc = false
-
-padding-left = 0
-padding-right = 0
-
-module-margin-right = 0
-module-margin-left = 0
-
-modules-right = battery wlan mpd menu0
+modules-right = wlan battery mpd menu0
 modules-center = i3
 modules-left = date xwindow
 
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-overline-size = 0
-overline-color = ${colors.white}
 underline-size = 1
-underline-color = ${colors.modfg}
+underline-color = ${colors.fg}
 
 font-0 = xos4terminus:size=10;1
 font-1 = FontAwesome:size=12;2
 font-2 = TakaoGothic:weight=bold:size=12;1
-font-3 = FontAwesome:size=12;2
-
 
 [module/xwindow]
 type = internal/xwindow
 label = %title%
 label-maxlen = 3010
 
-[module/filesystem]
-type = internal/fs
-interval = 25
+;[module/filesystem]
+;type = internal/fs
+;interval = 25
 
 
 ;mount-0 = /
-mount-0 = /home
+;mount-0 = /home
 ;mount-2 = /media/gui
 
-label-mounted =  %free%
-label-mounted-underline = ${colors.modfg}
-label-mounted-padding = 1
-label-mounted-background = ${colors.bg}
+;label-mounted =  %free%
+;label-mounted-underline = ${colors.fg}
+;label-mounted-padding = 1
+;label-mounted-background = ${colors.bg}
 
-label-unmounted =
-label-unmounted-foreground = ${colors.bg}
+;label-unmounted =
+;label-unmounted-foreground = ${colors.bg}
 
 
-[module/bspwm]
-type = internal/bspwm
-ws-icon-default = x
+;[module/bspwm]
+;type = internal/bspwm
+;ws-icon-default = x
 
-label-active = %index%
-label-active-background = #ee333333
-label-active-underline= #cc333333
-label-active-padding = 2
+;label-active = %index%
+;label-active-background = #ee333333
+;label-active-underline= #cc333333
+;label-active-padding = 2
 
-label-occupied = %index%
-label-occupied-padding = 2
+;label-occupied = %index%
+;label-occupied-padding = 2
 
-label-urgent = %index%
-label-urgent-background = #bd2c40
-label-urgent-padding = 2
+;label-urgent = %index%
+;label-urgent-background = #bd2c40
+;label-urgent-padding = 2
 
-label-empty = %index%
-label-empty-foreground = #55
-label-empty-padding = 2
+;label-empty = %index%
+;label-empty-foreground = #55
+;label-empty-padding = 2
 
 
 [module/i3]
@@ -129,7 +109,7 @@ label-unfocused = 
 ;label-unfocused = %index%
 label-unfocused-padding = 1
 ;label-unfocused-background = ${colors.black}
-label-unfocused-underlinde = ${colors.white}
+label-unfocused-underlinde = ${colors.fg}
 
 label-urgent = 
 ;label-urgent = %index%!
@@ -139,7 +119,7 @@ label-urgent-foreground = ${colors.red}
 
 label-visible = 
 ;label-visible = %index%
-label-visible-foreground = ${colors.white}
+label-visible-foreground = ${colors.fg}
 label-visible-padding = 1
 
 
@@ -147,8 +127,8 @@ label-visible-padding = 1
 [module/mpd]
 type = internal/mpd
 
-host = gui
-port = 4200
+host = 127.0.0.1
+port = 6600
 
 ;format-online = <label-song> <icon-prev> <icon-play> <icon-pause> <icon-next> 
 format-online = <icon-pause> <icon-play> <label-song>
@@ -179,57 +159,57 @@ toggle-on-foreground = #e60053
 toggle-off-foreground = #66
 
 
-[module/backlight]
-type = internal/xbacklight
+;[module/backlight]
+;type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+;format = <label> <bar>
+;label = BL
 
-bar-width = 10
-bar-indicator = │
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = #55
-
-
-[module/cpu]
-format-label = internal/cpu
-
-format = <label>
-
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-ramp-coreload-underline = ${colors.fg}
-
-type = internal/cpu
-interval = 2
-label = %{F${colors.fg}  %percentage% %{F-}
-padding = 2
-
-label-underline = ${colors.modfg}
-label-background = ${colors.bg}
-;label-overline = ${colors.white}
+;bar-width = 10
+;bar-indicator = │
+;bar-indicator-foreground = #ff
+;bar-indicator-font = 2
+;bar-fill = ─
+;bar-fill-font = 2
+;bar-fill-foreground = #9f78e1
+;bar-empty = ─
+;bar-empty-font = 2
+;bar-empty-foreground = #55
 
 
-[module/memory]
-type = internal/memory
-interval = 2
+;[module/cpu]
+;format-label = internal/cpu
 
-label = %{F${colors.white}  %percentage_used% %{F-}
-label-underline = ${colors.modfg}
-label-foreground = ${colors.fg}
-label-background = ${colors.bg}
+;format = <label>
+
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
+;ramp-coreload-underline = ${colors.fg}
+
+;type = internal/cpu
+;interval = 2
+;label = %{F${colors.fg}  %percentage% %{F-}
+;padding = 2
+
+;label-underline = ${colors.fg}
+;label-background = ${colors.bg}
+;label-overline = ${colors.fg}
+
+
+;[module/memory]
+;type = internal/memory
+;interval = 2
+
+;label = %{F${colors.fg}  %percentage_used% %{F-}
+;label-underline = ${colors.fg}
+;label-foreground = ${colors.fg}
+;label-background = ${colors.bg}
 
 
 [module/wlan]
@@ -241,7 +221,7 @@ format-connected-padding = 1
 format-disconnected-padding = 1
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.white}
+format-connected-underline = ${colors.fg}
 format-disconnected-underline = ${colors.gray}
 
 label-connected = %essid%
@@ -249,20 +229,20 @@ label-disconnected = 
 label-disconnected-foreground = ${colors.gray}
 
 
-[module/eth]
-type = internal/network
-interface = enp2s0
-interval = 3.0
+;[module/eth]
+;type = internal/network
+;interface = enp2s0
+;interval = 3.0
 
-format-connected-padding = 1
-format-disconnected-padding = 1
+;format-connected-padding = 1
+;format-disconnected-padding = 1
 
-format-connected-underline = ${colors.white}
-format-disconnected-underline = ${colors.gray}
+;format-connected-underline = ${colors.fg}
+;format-disconnected-underline = ${colors.gray}
 
-label-connected =  
-label-disconnected = 
-label-disconnected-foreground = ${colors.gray}
+;label-connected =  
+;label-disconnected = 
+;label-disconnected-foreground = ${colors.gray}
 
 
 [module/date]
@@ -271,40 +251,40 @@ date-alt =  %A %H:%M
 date =  %b/%d/%y %H:%M 
 interval = 5
 
-format-underline = ${colors.white}
+format-underline = ${colors.fg}
 format-background = ${colors.bg}
 format-foreground = ${colors.fg}
 format-padding = 1
 
 
 
-[module/volume]
-type = internal/volume
+;[module/volume]
+;type = internal/volume
 
-format-volume = <bar-volume>
+;format-volume = <bar-volume>
 
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+;label-volume = VOL
+;label-volume-foreground = ${root.foreground}
 
-label-muted =  sound muted
-label-muted-foreground = ${colors.gray}
+;label-muted =  sound muted
+;label-muted-foreground = ${colors.gray}
 
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.green}
-bar-volume-foreground-1 = ${colors.green}
-bar-volume-foreground-2 = ${colors.green}
-bar-volume-foreground-3 = ${colors.green}
-bar-volume-foreground-4 = ${colors.yellow}
-bar-volume-foreground-5 = ${colors.red}
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 4
-bar-volume-indicator-foreground = ${colors.white}
-bar-volume-fill = 
-bar-volume-fill-font = 4
-bar-volume-empty = 
-bar-volume-empty-font = 4
-bar-volume-empty-foreground = ${colors.gray}
+;bar-volume-width = 10
+;bar-volume-foreground-0 = ${colors.green}
+;bar-volume-foreground-1 = ${colors.green}
+;bar-volume-foreground-2 = ${colors.green}
+;bar-volume-foreground-3 = ${colors.green}
+;bar-volume-foreground-4 = ${colors.yellow}
+;bar-volume-foreground-5 = ${colors.red}
+;bar-volume-gradient = false
+;bar-volume-indicator = 
+;bar-volume-indicator-font = 4
+;bar-volume-indicator-foreground = ${colors.fg}
+;bar-volume-fill = 
+;bar-volume-fill-font = 4
+;bar-volume-empty = 
+;bar-volume-empty-font = 4
+;bar-volume-empty-foreground = ${colors.gray}
 
 
 [module/battery]
@@ -329,44 +309,44 @@ format-full-padding = 1
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.white}
+ramp-capacity-foreground = ${colors.fg}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.white}
+animation-charging-foreground = ${colors.fg}
 animation-charging-framerate = 500
 
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 65
+;[module/temperature]
+;type = internal/temperature
+;thermal-zone = 0
+;warn-temperature = 65
 
-format = <label>
-format-underline = ${colors.white}
-format-warn = <label-warn>
-format-warn-underline = ${colors.red}
+;format = <label>
+;format-underline = ${colors.fg}
+;format-warn = <label-warn>
+;format-warn-underline = ${colors.red}
 
-format-padding = 1
-format-warn-padidng = 1
+;format-padding = 1
+;format-warn-padidng = 1
 
-label =  %temperature%
-label-warn =  %temperature%
+;label =  %temperature%
+;label-warn =  %temperature%
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = #55
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+;ramp-foreground = #55
 
 
 [module/menu0]
 type = custom/menu
 
 format = <label-toggle> <menu>
-;format-underline = ${colors.white}
+;format-underline = ${colors.fg}
 format-padding = 1
 ;format-margin = 0
 
@@ -382,19 +362,19 @@ menu-0-2 = "  cancel "
 label-open = 
 label-close =
 
-[module/updates]
-type = custom/script
+;[module/updates]
+;type = custom/script
 
-label-background = ${colors.bg}
-label-padding = 1
-label-underline = ${colors.modfg}
+;label-background = ${colors.bg}
+;label-padding = 1
+;label-underline = ${colors.fg}
 
 
-exec = checkupdates | wc -l
+;exec = checkupdates | wc -l
 ;tail = true
-interval = 900
+;interval = 900
 
 
-label  =  %output%
+;label  =  %output%
 
 ; vim:ft=dosini
