@@ -18,6 +18,8 @@ packages=(
     "xclip"                             # Clipboard manipulation
     "pygtk"				                      # Handles i3-exit script
     "htop"                              # A better CPU usage viewer
+    "todotxt"                           # CLI todo manager based on the todo.txt format
+    "dofi-git"                          # Rofi todo manager using todotxt
 
     # Window management
     "i3-gaps"                           # Window manager
@@ -67,6 +69,8 @@ stows=(
     "mopidy--home"
     "wallpapers--home"
     "emacs--home"
+    "dofi--home"
+    "todo--home"
     # Root folder stows
     "pacman--root"
     "slim--root"
@@ -78,6 +82,11 @@ sudo -v
 
 # Verify script dependencies
 sudo pacman -S --needed --noconfirm base-devel git stow
+
+# Make dirs that need to be in place before stow
+mkdir ~/bin
+mkdir ~/.todo
+mkdir ~/.config
 
 # Remove conflicts
 rm -rf ~/.config/i3
@@ -94,6 +103,8 @@ rm -rf ~/.ncmpcpp
 rm -rf ~/.config/mopidy
 rm -rf ~/.emacs.d
 rm -rf ~/.spacemacs
+rm -rf ~/.todo/config
+rm -rf ~/.config/dofi
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi

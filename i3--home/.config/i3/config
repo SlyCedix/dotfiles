@@ -74,6 +74,9 @@ bindsym $mod+Shift+q kill
 # start rofi
 bindsym $mod+d exec '.config/i3/rofi.sh'
 
+# start dofi
+bindsym $mod+t exec dofi
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
