@@ -27,9 +27,10 @@ font pango:Input Mono 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-#set colors from wpgtk
-set $fg #c3d48c
-set $bg #1d2935
+#set colors from xrdb
+set_from_resource $fg foreground
+set_from_resource $bg background
+
 
 #gaps settings
 for_window [class="^.*"] border pixel 1
