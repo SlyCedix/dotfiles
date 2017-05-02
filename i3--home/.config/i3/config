@@ -50,7 +50,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 exec --no-startup-id compton
 exec --no-startup-id xset s off -dpms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id xautolock -time 15 -locker ~/.config/i3/i3-lock
+exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-scale ${HOME}/.wallpapers
 exec --no-startup-id mopidy
