@@ -214,7 +214,7 @@ toggle-off-foreground = #66
 
 [module/wlan]
 type = internal/network
-interface = enp2s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected-padding = 1
@@ -289,7 +289,7 @@ format-padding = 1
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = AC
 full-at = 98
 
