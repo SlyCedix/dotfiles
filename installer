@@ -76,6 +76,7 @@ stows=(
     "dunst--home"
     "neofetch--home"
     "bin--home"
+    "gtk--home"
 
     # Root folder stows
     "pacman--root"
@@ -112,6 +113,7 @@ rm -rf ~/.spacemacs
 rm -rf ~/.todo/config
 rm -rf ~/.config/dofi
 rm -rf ~/.config/dunst
+rm -rf "~/.gtkrc-2.0"
 
 sudo rm -rf /etc/pacman.conf
 sudo rm -rf /etc/slim.confi
@@ -193,3 +195,5 @@ oomox-cli /opt/oomox/colors/Base-16/Tomorrow-Dark
 printf "Firefox will open shortly to the two extensions you need, as well as the new homepage you should set\n"
 firefox -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/stylish -new-tab -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage -new-tab -url https://koryschneider.github.io/tab-a-startpage/ &
 printf "Once stylish is installed, copy firefox--nostow/firefox-main-style.css and firefox--nostow/firefox-tab-style.css into stylish themes.\n"
+
+printf "You may have to restart for all changes to take effect"
