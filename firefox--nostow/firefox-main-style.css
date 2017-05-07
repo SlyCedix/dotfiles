@@ -1,3 +1,4 @@
+
 @import "file:///home/sly/dotfiles/firefox--nostow/firefox-colors.css";
 @namespace html url(http://www.w3.org/1999/xhtml);
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
@@ -7,15 +8,15 @@
     --bg-light: var(--color0); --bg-dark: var(--color0);
     --fg-light: var(--color5); --fg-dark: var(--color5);
     --tab-triangle-correction: -1px;
-    --tab-height: 24px; --tab-icon-size: 16px; --tab-strip-margin: 2px; --tab-overlap: -5px;
-    --tab-fonts: "ypn envypn","Source Sans Pro","Lemon",monospace,"Dejavu Sans"; --tab-font-size: 9pt;
+    --tab-height: 28px; --tab-icon-size: 16px; --tab-strip-margin: 2px; --tab-overlap: -5px;
+    --tab-fonts: "Input Mono","ypn envypn","Source Sans Pro","Lemon",monospace,"Dejavu Sans"; --tab-font-size: 9pt;
     --tab-text-align: left; /* left | center | right */ /* Align where the text on a tab is. */
     --tab-triangle: none;  /* block | none */ 
 
     /* URL VARIABLES */
     --url-background: var(--bg-dark); --url-color: var(--fg-dark);
-    --url-height: 24px; --url-right-margin: 6px;
-    --url-fonts: "ypn envypn","Source Sans Pro","Lemon",monospace,"Dejavu Sans"; --url-font-size: 9pt;
+    --url-height: 28px; --url-right-margin: 6px;
+    --url-fonts: "Input Mono","ypn envypn","Source Sans Pro","Lemon",monospace,"Dejavu Sans"; --url-font-size: 9pt;
     --url-text-align: center; /* left | center | right */ /* Align where the text in the URL is. */
     --url-position: fixed; /* absolute == top (under tabs) || fixed == bottom of browser */
 }
@@ -62,7 +63,7 @@
     .tab-drop-indicator { margin-bottom: 0 !important; }
     
     
-    /*#browser { margin-bottom: var(--url-height) !important; }/**/ /* Uncomment to enable bottom margin */
+    #browser { margin-bottom: var(--url-height) !important; }/**/ /* Uncomment to enable bottom margin */ 
     
     #navigator-toolbox { background: var(--url-background) !important; }
     #navigator-toolbox * { clip: auto !important; clip-path: none !important; }
@@ -385,4 +386,3 @@ tabbrowser tabpanels, #appcontent > #content { background: var(--bg-light) !impo
     input, textarea { color: #222628 !important; -moz-appearance: none !important; }
 }
 /**/
-
