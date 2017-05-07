@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      markdown
      html
      ;; ----------------------------------------------------------------
@@ -330,7 +331,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-edit-latex latex-extra org-pdfview projectile pkg-info epl flx evil goto-chg undo-tree diminish bind-map bind-key packed dash helm avy helm-core popup async mmm-mode markdown-toc markdown-mode gh-md web-mode tagedit s slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode base16-theme which-key use-package pcre2el macrostep hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag exec-path-from-shell evil-visualstar evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (pkgbuild-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic f org-edit-latex latex-extra org-pdfview projectile pkg-info epl flx evil goto-chg undo-tree diminish bind-map bind-key packed dash helm avy helm-core popup async mmm-mode markdown-toc markdown-mode gh-md web-mode tagedit s slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode base16-theme which-key use-package pcre2el macrostep hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag exec-path-from-shell evil-visualstar evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
