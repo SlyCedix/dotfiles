@@ -28,8 +28,7 @@ class i3_exit:
     def suspend_action(self,btn):
         self.disable_buttons()
         self.status.set_label("Suspending, please standby...")
-        os.system("~/.config/i3/i3-lock")
-        os.system('dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 \
+        os.system('~/.config/i3/i3-lock && dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 \
         "org.freedesktop.login1.Manager.Suspend" boolean:true')
         gtk.main_quit()
 
