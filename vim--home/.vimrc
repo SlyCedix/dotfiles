@@ -145,13 +145,9 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+let base16colorspace=256
 let no_buffers_menu=1
 colorscheme base16-default-dark
-
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
 
 set mousemodel=popup
 set t_Co=256
