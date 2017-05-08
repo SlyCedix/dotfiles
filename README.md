@@ -1,7 +1,6 @@
 # Slycedix's Dotfiles
 
 ## Installation
----
 
 In your home directory, run:
 >git clone https://github.com/slycedix/dotfiles
