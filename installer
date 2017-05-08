@@ -1,0 +1,196 @@
+#!/bin/sh
+
+# Array of packages to install
+packages=(
+    # Shell Packages
+    "zsh"                               # Shell replacement
+    "zsh-syntax-highlighting"           # Zsh plugin
+
+    # Basic Packages
+    "termite"                           # Terminal emulator
+    "ranger"                            # File explorer
+    "ttf-font-awesome"                  # Icon font
+    "ttf-input"                         # Mono font of choice
+    "wget"                              # Used to directly download files from the internet
+    "unzip"                             # Zip extraction
+    "unrar"                             # Rar extraction
+    "p7zip"                             # 7z extraction
+    "xclip"                             # Clipboard manipulation
+    "pygtk"				                # Handles i3-exit script
+    "htop"                              # A better CPU usage viewer
+    "todotxt"                           # CLI todo manager based on the todo.txt format
+    "dofi-git"                          # Rofi todo manager using todotxt
+    "neofetch"                          # Configurable system info fetcher
+
+    # Window management
+    "i3-gaps"                           # Window manager
+    "i3lock-color-git"                  # Simple idle locker
+    "xautolock"                         # Autolocker for i3lock
+    "jsoncpp"                           # Dependency for polybar scripts
+    "libmpdclient"                      # Dependency for polybar scripts
+    "polybar"                           # Workspace display and infor bar
+    "compton"                           # Compositer
+    "rofi"                              # Run menu
+    "dunst"                             # Notification daemon
+    "slim"		                        # Slim desktop manager
+    "archlinux-themes-slim"		        # Themes for slim desktop manager
+    "oomox-git"                         # Numix gtk theme with color changing support
+
+    # Internet Packages
+    "firefox"                           # Mozilla web browser
+
+    # Imaging Packages
+    "feh"                               # Image viewer and background manager
+    "scrot"                             # Screenshotter
+    "imagemagick"                       # Command line image processor
+    "w3m"                               # Terminal image processor
+
+    # Music Packages
+    "ncmpcpp"                           # Ncurses based music player
+    "cava-git"                          # Console based audio visualizer
+    "mopidy"                            # Python based music server daemon
+
+    # Development packages
+    "vim"                               # Robust editor based around scripting
+
+    # Communication Packages
+    "discord"                           # VoIP client
+)
+
+# Array of stows to install
+stows=(
+    # Home folder stow
+    "i3--home"
+    "x--home"
+    "zsh--home"
+    "vim--home"
+    "termite--home"
+    "polybar--home"
+    "cava--home"
+    "ncmpcpp--home"
+    "mopidy--home"
+    "wallpapers--home"
+    "dofi--home"
+    "todo--home"
+    "dunst--home"
+    "neofetch--home"
+    "bin--home"
+    "gtk--home"
+
+    # Root folder stows
+    "pacman--root"
+    "slim--root"
+    "pulse--root"
+)
+
+# Ask for super user
+sudo -v
+
+# Verify script dependencies
+sudo pacman -S --needed --noconfirm base-devel git stow
+
+# Make dirs that need to be in place before stow
+mkdir ~/bin
+mkdir ~/.todo
+mkdir ~/.config
+
+# Remove conflicts
+rm -rf ~/.config/i3
+rm -rf ~/.xinitrc
+rm -rf ~/.Xresources
+rm -rf ~/.bash*
+rm -rf ~/.zshrc
+rm -rf ~/.zsh
+rm -rf ~/.vimrc
+rm -rf ~/.config/termite
+rm -rf ~/.config/polybar
+rm -rf ~/.config/cava
+rm -rf ~/.ncmpcpp
+rm -rf ~/.config/mopidy
+rm -rf ~/.todo/config
+rm -rf ~/.config/dofi
+rm -rf ~/.config/dunst
+rm -rf "~/.gtkrc-2.0"
+
+sudo rm -rf /etc/pacman.conf
+sudo rm -rf /etc/slim.confi
+sudo rm -rf /etc/pulse/default.pa
+
+# Remove build directory from aui script
+rm -rf ~/aui_packages
+
+# Install stows
+for i  in ${stows[@]}; do
+    if [[ $(echo ${i} | grep "\--home") != "" ]]; then
+        stow -d ~/dotfiles -t ~ ${i}
+    elif [[ $(echo ${i} | grep "\--root") != "" ]]; then
+        sudo stow -d ~/dotfiles -t / ${i}
+    fi
+
+    echo "${i} stow installed"
+done
+
+# Increase /tmp size to build all packages
+sudo mount -o remount,size=4G,noatime /tmp
+
+# Fetch cower key
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
+
+# Synchronize repos
+sudo pacman -Sy
+
+# Build git packages
+if [[ $(pacman -Qs pacaur) == "" ]]; then
+    buildRoot="/tmp/buildroot"
+
+    #Prepepar build directory
+    mkdir -p "${buildRoot}"
+    cd "${buildRoot}" || exit 1
+
+    # Retrieve source files
+    git clone "https://aur.archlinux.org/cower.git"
+    git clone "https://aur.archlinux.org/pacaur.git"
+
+    # Build cower, a pacaur dependency
+    cd "${buildRoot}/cower" || exit 1
+    makepkg --syncdeps --install --noconfirm
+
+    # Build pacaur, an AUR helper
+    cd "${buildRoot}/pacaur" || exit 1
+    makepkg --syncdeps --install --noconfirm
+
+    # Clean up build directory
+    cd ~ || exit 1
+    rm -rf "${buildRoot}"
+fi
+
+# Uninstall yaourt because pacaur is installed 
+if [[ $(pacman -Qs yaourt) ]]; then
+    pacaur -Rs yaourt
+fi
+
+# Install packages from array that are not already installed
+for i in ${packages[@]}; do
+    if [[ $(pacman -Qs ${i}) == "" ]]; then
+        pacaur --needed --noconfirm --noedit -S ${i}
+    fi
+done
+
+# Enable slim desktop manager
+sudo systemctl enable slim.service
+
+# Change shell to zsh
+sudo chsh -s /bin/zsh $(whoami)
+
+# Clear orphaned packages
+sudo pacman -Rns $(pacman -Qtdq)
+
+# Change oomox theme
+oomox-cli /opt/oomox/colors/Base-16/Tomorrow-Dark
+
+# Tell user how to set up the stylish themes
+printf "Firefox will open shortly to the two extensions you need, as well as the new homepage you should set\n"
+firefox -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/stylish -new-tab -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage -new-tab -url https://koryschneider.github.io/tab-a-startpage/ &
+printf "Once stylish is installed, copy firefox--nostow/firefox-main-style.css and firefox--nostow/firefox-tab-style.css into stylish themes.\n"
+
+printf "You may have to restart for all changes to take effect"

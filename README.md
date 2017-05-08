@@ -1,14 +1,23 @@
-# Hello /r/UnixPorn
+# Slycedix's Dotfiles
 
-Dependencies:  
- * [wal](https://github.com/dylanaraps/wal) - Needed to generate colorschemes
- 
-This config is heavily based on [Zedjones' configs](https://github.com/Zedjones/desktop-config) and [rintivdorh's polybar](https://www.reddit.com/r/unixporn/comments/5y85do/i3gaps_polybar_cranium/) with the added benefit of being able to switch color schemes on the fly with the theme script that I've included.
+## Installation
+---
 
-[Firefox Stylish Theme](https://gist.github.com/SlyCedix/d5ebc2ee9292adedf6f6ce1f41cd4157) - Must change home location at the top of the file
+In your home directory, run:
+>git clone https://github.com/slycedix/dotfiles
 
-[Startpage is tab-a-startpage](https://github.com/KorySchneider/tab-a-startpage) 
+For now with the flag
+>-b rewrite
 
-[Stylish for startpage here](https://gist.github.com/SlyCedix/9e6c641bc99f4c0b3e9d4b8dd1f85b38)
+Enter the new dotfiles directory and run:
+>./installer
 
-I am also using lxsession & lxappearance to customize all colors of the adapta-nokoto-eta gtk theme to better match the rest of my setup
+This will open a firefox window with a few tabs for extensions needed, as well as the homepage.
+
+Install stylish
+
+Open stylish settings and make a new theme for firefox-main-style.css and firefox-tab-style.css from firefox--nostow
+
+Set the startpage as your homepage
+
+Reboot your device
