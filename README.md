@@ -1,6 +1,6 @@
-#Slycedix's Dotfiles
+# Slycedix's Dotfiles
 
-##Installation
+## Installation
 ---
 
 In your home directory, run:
