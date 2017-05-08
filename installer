@@ -182,6 +182,9 @@ sudo systemctl enable slim.service
 # Change shell to zsh
 sudo chsh -s /bin/zsh $(whoami)
 
+# Change shell colorscheme
+sh ~/dotfiles/base16-shell--nostow/scripts/base16-tomorrow-night.sh
+
 # Clear orphaned packages
 sudo pacman -Rns $(pacman -Qtdq)
 
