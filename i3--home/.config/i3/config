@@ -48,20 +48,12 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 #startup execs
 exec --no-startup-id compton
-exec --no-startup-id xset s off -dpms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-<<<<<<< HEAD:i3/.config/i3/config
-exec_always --no-startup-id $HOME/.config/i3/run_wal.sh
-exec --no-startup-id xautolock -time 15 -locker ~/.config/i3/i3-lock
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id dunst -config "${HOME}/.dotfiles/dunst/dunstrc"
-=======
-exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
 exec --no-startup-id dunst
+exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
 exec --no-startup-id feh --bg-scale ${HOME}/.wallpapers
 exec --no-startup-id mopidy
 exec --no-startup-id $HOME/.config/i3/lightsOn
->>>>>>> rewrite:i3--home/.config/i3/config
 
 #special binds
 bindsym Print exec prntscr
