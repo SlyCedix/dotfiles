@@ -71,8 +71,8 @@ Plug 'honza/vim-snippets'
 
 "" Color
 Plug 'chriskempson/base16-vim'
-Plug 'chriskempson/base16-tomorrow-scheme'
 
+Plug 'edkolev/promptline.vim'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -145,11 +145,9 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
-
+let base16colorspace=256
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme base16-default-dark
-endif
+colorscheme base16-default-dark
 
 set mousemodel=popup
 set t_Co=256
@@ -214,7 +212,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'base16color'
+let g:airline_theme = 'tomorrow'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
