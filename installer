@@ -16,7 +16,7 @@ packages=(
     "unrar"                             # Rar extraction
     "p7zip"                             # 7z extraction
     "xclip"                             # Clipboard manipulation
-    "pygtk"				                      # Handles i3-exit script
+    "pygtk"				                # Handles i3-exit script
     "htop"                              # A better CPU usage viewer
     "todotxt"                           # CLI todo manager based on the todo.txt format
     "dofi-git"                          # Rofi todo manager using todotxt
@@ -32,8 +32,8 @@ packages=(
     "compton"                           # Compositer
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
-    "slim"		                          # Slim desktop manager
-    "archlinux-themes-slim"		          # Themes for slim desktop manager
+    "slim"		                        # Slim desktop manager
+    "archlinux-themes-slim"		        # Themes for slim desktop manager
     "oomox-git"                         # Numix gtk theme with color changing support
 
     # Internet Packages
@@ -51,7 +51,7 @@ packages=(
     "mopidy"                            # Python based music server daemon
 
     # Development packages
-    "emacs"                             # Robust editor based around scripting
+    "vim"                               # Robust editor based around scripting
 
     # Communication Packages
     "discord"                           # VoIP client
@@ -70,7 +70,6 @@ stows=(
     "ncmpcpp--home"
     "mopidy--home"
     "wallpapers--home"
-    "emacs--home"
     "dofi--home"
     "todo--home"
     "dunst--home"
@@ -108,8 +107,6 @@ rm -rf ~/.config/polybar
 rm -rf ~/.config/cava
 rm -rf ~/.ncmpcpp
 rm -rf ~/.config/mopidy
-rm -rf ~/.emacs.d
-rm -rf ~/.spacemacs
 rm -rf ~/.todo/config
 rm -rf ~/.config/dofi
 rm -rf ~/.config/dunst
