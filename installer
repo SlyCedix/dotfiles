@@ -46,6 +46,13 @@ packages=(
     "w3m"                               # Terminal image processor
 
     # Music Packages
+    "mpd"                               # Lightweight music player daemon
+    "ncmpcpp"                           # Mpd client written in c++
+    "beets"                             # Music library organizer
+    "mpc"                               # Client for mpd which helps stream line updates
+
+    # Video Packages
+    "mpv"                               # Minimal video player
 
     # Development packages
     "vim"                               # Robust editor based around scripting
@@ -70,11 +77,13 @@ stows=(
     "neofetch--home"
     "bin--home"
     "gtk--home"
+    "ncmpcpp--home"
+    "beets--home"
+    "mpd--home"
 
     # Root folder stows
     "pacman--root"
     "slim--root"
-    "pulse--root"
 )
 
 # Ask for super user
@@ -87,6 +96,7 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 mkdir ~/bin
 mkdir ~/.todo
 mkdir ~/.config
+mkdir ~/.config/beets
 
 # Remove conflicts
 rm -rf ~/.config/i3
@@ -102,10 +112,11 @@ rm -rf ~/.todo/config
 rm -rf ~/.config/dofi
 rm -rf ~/.config/dunst
 rm -rf "~/.gtkrc-2.0"
+rm -rf ~/.config/beets/config.yaml
+rm -rf ~/.config/mpd
 
 sudo rm -rf /etc/pacman.conf
-sudo rm -rf /etc/slim.confi
-sudo rm -rf /etc/pulse/default.pa
+sudo rm -rf /etc/slim.conf
 
 # Remove build directory from aui script
 rm -rf ~/aui_packages
