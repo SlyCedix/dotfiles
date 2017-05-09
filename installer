@@ -46,9 +46,6 @@ packages=(
     "w3m"                               # Terminal image processor
 
     # Music Packages
-    "ncmpcpp"                           # Ncurses based music player
-    "cava-git"                          # Console based audio visualizer
-    "mopidy"                            # Python based music server daemon
 
     # Development packages
     "vim"                               # Robust editor based around scripting
@@ -66,9 +63,6 @@ stows=(
     "vim--home"
     "termite--home"
     "polybar--home"
-    "cava--home"
-    "ncmpcpp--home"
-    "mopidy--home"
     "wallpapers--home"
     "dofi--home"
     "todo--home"
@@ -103,10 +97,7 @@ rm -rf ~/.zshrc
 rm -rf ~/.zsh
 rm -rf ~/.vimrc
 rm -rf ~/.config/termite
-rm -rf ~/.config/polybar
-rm -rf ~/.config/cava
 rm -rf ~/.ncmpcpp
-rm -rf ~/.config/mopidy
 rm -rf ~/.todo/config
 rm -rf ~/.config/dofi
 rm -rf ~/.config/dunst
