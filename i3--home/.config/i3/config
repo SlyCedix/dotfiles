@@ -48,11 +48,11 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 #startup execs
 exec --no-startup-id compton
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
 exec --no-startup-id feh --bg-scale ${HOME}/.wallpapers
-exec --no-startup-id $HOME/.config/i3/lightsOn
+exec --no-startup-id ~/.config/i3/lightsOn
 exec --no-startup-id mpd
 
 #special binds
