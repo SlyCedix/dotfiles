@@ -32,7 +32,7 @@ border-color = $00000000
 width = 100%
 height = 24px
 
-modules-right = wlan battery mpd menu0
+modules-right = mpd wlan battery menu0
 modules-center = i3
 modules-left = date xwindow
 
@@ -130,7 +130,7 @@ type = internal/mpd
 host = 127.0.0.1
 port = 6600
 
-;format-online = <label-song> <icon-prev> <icon-play> <icon-pause> <icon-next> 
+;format-online = <label-song> <icon-prev> <icon-play> <icon-pause> <icon-next>
 format-online = <icon-pause> <icon-play> <label-song>
 format-offline = <label-offline>
 
