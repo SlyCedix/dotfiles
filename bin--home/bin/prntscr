@@ -2,4 +2,4 @@
 sleep 0.5
 scrot /tmp/temp-scrot.png
 xclip -selection clipboard -t image/png -i /tmp/temp-scrot.png
-mv /tmp/temp-scrot.png ~/Pictures/scrot/scrot-$(date +%F-%H-%M-%S).png
+mv /tmp/temp-scrot.png ~/scrot/scrot-$(date +%F-%H-%M-%S).png
