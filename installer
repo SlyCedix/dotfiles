@@ -29,7 +29,7 @@ packages=(
     "jsoncpp"                           # Dependency for polybar scripts
     "libmpdclient"                      # Dependency for polybar scripts
     "polybar"                           # Workspace display and infor bar
-    "compton"                           # Compositer
+    "xcompmgr"                          # Compositor
     "rofi"                              # Run menu
     "dunst"                             # Notification daemon
     "slim"		                        # Slim desktop manager

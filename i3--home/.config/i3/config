@@ -47,7 +47,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 #smart_gaps on
 
 #startup execs
-exec --no-startup-id compton
+exec --no-startup-id xcompmgr
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3-lock
