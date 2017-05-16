@@ -444,4 +444,3 @@ nnoremap <Leader>o :.Gbrowse<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
