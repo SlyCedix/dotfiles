@@ -190,6 +190,9 @@ sudo pacman -Rns $(pacman -Qtdq)
 # Change oomox theme
 oomox-cli /opt/oomox/colors/Base-16/Tomorrow-Dark
 
+# Add vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Tell user how to set up the stylish themes
 printf "Firefox will open shortly to the two extensions you need, as well as the new homepage you should set\n"
 firefox -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/stylish -new-tab -new-tab -url https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage -new-tab -url https://koryschneider.github.io/tab-a-startpage/ &
