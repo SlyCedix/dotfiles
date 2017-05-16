@@ -95,6 +95,9 @@ sudo pacman -S --needed --noconfirm base-devel git stow
 # Make dirs that need to be in place before stow
 mkdir ~/bin
 mkdir ~/.todo
+mkdir ~/.todo/done
+mkdir ~/Music
+mkdir ~/Music/.mpd
 mkdir ~/.config
 mkdir ~/.config/beets
 
