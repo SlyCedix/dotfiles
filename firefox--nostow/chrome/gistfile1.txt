@@ -1,0 +1,16 @@
+@namespace "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+@-moz-document url("chrome://browser/content/browser.xul") {
+    #PopupAutoCompleteRichResult {
+        /* bindings.xml in the same folder as userChrome.css */
+        -moz-binding: url("bindings.xml#urlbar-popup") !important;
+    }
+    #appMenu-popup {
+        -moz-binding: url("bindings.xml#appmenu-popup") !important;
+    }
+    #navigator-toolbox {
+        display: contents !important;
+    }
+    #nav-bar {
+        -moz-box-ordinal-group: 2 !important;
+    }
+}
