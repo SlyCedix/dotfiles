@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DIR=$HOME/.config/base16-shell/scripts/
+
+SCHEME=$1
+SCHEME=${SCHEME//_/-}
+SCHEME=${SCHEME//$DIR/}
+SCHEME=${SCHEME//.sh/}
+SCHEME=$SCHEME-256.Xresources
+
+echo $1 > ~/.currentscheme
+
+rm -f $HOME/.Xresources
+
+curl -s https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$SCHEME >> $HOME/.Xresources
+xrdb -load $HOME/.Xresources

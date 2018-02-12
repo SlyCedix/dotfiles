@@ -1,0 +1,4 @@
+[options]
+font = fontawesome 9
+font = Monospace 9
+scrollback_lines = 10000
