@@ -12,5 +12,5 @@ echo $1 > ~/.currentscheme
 
 rm -f $HOME/.Xresources
 
-curl -s https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$SCHEME >> $HOME/.Xresources
+curl -s https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$SCHEME >> ~/dotfiles/x--home/.Xresources
 xrdb -load $HOME/.Xresources
