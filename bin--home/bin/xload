@@ -10,5 +10,4 @@ SCHEME=$SCHEME-256.Xresources
 
 echo $1 > ~/.currentscheme
 
-curl -s https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$SCHEME > ~/dotfiles/x--home/.Xresources &
-xrdb -load $HOME/.Xresources
+curl -s https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$SCHEME > ~/dotfiles/x--home/.Xresources && xrdb -load ~/.Xresources
