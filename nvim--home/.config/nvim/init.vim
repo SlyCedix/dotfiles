@@ -145,4 +145,8 @@ let g:ctrlp_show_hidden = 1
 " Better Whitespace
 highlight ExtraWhitespace guibg=#282828
 
-
+" Split navigation
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
