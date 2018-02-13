@@ -64,6 +64,8 @@ call plug#end()
 
 " Plugin Settings
 "
+" NERDTree
+let NERDTreeShowHidden = 1
 " Incsearch
 let g:incsearch#auto_nohlsearch = 1
 " Deoplete
