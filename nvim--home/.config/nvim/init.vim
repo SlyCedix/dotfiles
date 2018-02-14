@@ -3,6 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'scrooloose/nerdtree'
 	" Airline
 	Plug 'vim-airline/vim-airline'
+	" Airline-Themes
+	Plug 'vim-airline/vim-airline-themes'
 	" Better search
 	Plug 'haya14busa/incsearch.vim'
 	" Commenter
@@ -59,7 +61,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	" Colorscheme
 	"
 	" Base16
-	Plug 'chriskempson/base16-vim'
+	Plug 'w0ng/vim-hybrid'
 call plug#end()
 
 " Plugin Settings
@@ -70,6 +72,10 @@ let NERDTreeShowHidden = 1
 let g:incsearch#auto_nohlsearch = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='hybridline'
+
 
 " Settings
 "
@@ -112,11 +118,12 @@ set softtabstop=2
 set smarttab
 
 " Color settings
-"
-" Colorspace
-let base16colorspace=256
-" Colorscheme
-colorscheme base16-default-dark
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
+set t_Co=256
+set background=dark
+colorscheme hybrid
+
 
 " Binds
 "
