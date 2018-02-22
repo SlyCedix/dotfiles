@@ -9,8 +9,6 @@ packages=(
 
 	"zsh"											# Shell Replacement
 
-	"firefox"									# Web Browser
-	
 	"neofetch"								# System info fetcher
 
 	"ranger"									# Ncurses file explorer
@@ -86,6 +84,8 @@ stows=(
 	"x--home"
 	"zsh--home"
 	"bin--home"
+
+	"apt--root"
 )
 
 # Ask for super user permissions
@@ -95,6 +95,9 @@ sudo -v
 mkdir ~/bin 2> /dev/null
 mkdir ~/.config 2> /dev/null
 
+# Remove stow conflicts
+sudo rm -f /etc/apt/sources.list
+
 for i in ${stows[@]}; do
 	if [[ $(echo ${i} | grep "\--home") != "" ]]; then
 		stow -d ~/dotfiles -t ~ ${i}
@@ -103,6 +106,11 @@ for i in ${stows[@]}; do
 	fi
 done
 
+# Remove default installed firefox and replace with quantum
+if [[ $(dpkg-query -W --showformat='${Status}\n' "firefox" | grep "install ok installed") == "" ]]; then
+	sudo apt update && sudo apt upgrade 2> /dev/null
+	sudo apt remove firefox-esr && sudo apt install -t sid firefox 2> /dev/null
+fi
 
 for i in ${packages[@]}; do
 	if [[ $(dpkg-query -W --showformat='${Status}\n' ${i} | grep "install ok installed") == "" ]]; then
@@ -162,4 +170,6 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
+# Cleanup
 rm -rf ~/.temp
+sudo apt autoremove

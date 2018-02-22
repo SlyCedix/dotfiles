@@ -8,11 +8,11 @@ print_info() {
     info title
 		info line_break
 
-		info "    OS :" distro
-    info "    WM :" wm
-		info " SHELL :" shell
-		info "KERNEL :" kernel
-    info "UPTIME :" uptime
+		info "    OS " distro
+    info "    WM " wm
+		info " SHELL " shell
+		info "KERNEL " kernel
+    info "UPTIME " uptime
 
     info line_break
     info cols
