@@ -59,9 +59,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-scripts/c.vim'
 
 	" Colorscheme
-	"
-	" Base16
-	Plug 'w0ng/vim-hybrid'
+	Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Plugin Settings
@@ -74,7 +72,7 @@ let g:incsearch#auto_nohlsearch = 1
 let g:deoplete#enable_at_startup = 1
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='hybridline'
+let g:airline_theme='gruvbox'
 
 
 " Settings
@@ -122,7 +120,7 @@ let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 set t_Co=256
 set background=dark
-colorscheme hybrid
+colorscheme gruvbox
 
 
 " Binds

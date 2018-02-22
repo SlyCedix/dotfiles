@@ -1,45 +1,44 @@
 [options]
 	font = fontawesome 9
-	font = Input 9
+	font = Hack 9
 	scrollback_lines = 10000
 	cursor_shape = ibeam
 
 [colors]
 	# special
-	foreground      = #c5c8c6
-	foreground_bold = #c5c8c6
-	cursor          = #c5c8c6
-	background      = #1d1f21
+	foreground      = #ebdbb2
+	foreground_bold = #ebdbb2
+	cursor          = #ebdbb2
+	background      = #282828
 
-	#	black
-	color0  = #282a2e
-	color8  = #373b41
+	# black
+	color0  = #282828
+	color8  = #928374
 
-	#	red
-	color1  = #a54242
-	color9  = #cc6666
+	# red
+	color1  = #cc241d
+	color9  = #fb4934
 
 	# green
-	color2  = #8c9440
-	color10 = #b5bd68
+	color2  = #98971a
+	color10 = #b8bb26
 
-	#	yellow
-	color3  = #de935f
-	color11 = #f0c674
+	# yellow
+	color3  = #d79921
+	color11 = #b8bb26
 
 	# blue
-	color4  = #5f819d
-	color12 = #81a2be
+	color4  = #458588
+	color12 = #83a598
 
 	# magenta
-	color5  = #85678f
-	color13 = #b294bb
+	color5  = #b16286
+	color13 = #d3869b
 
 	# cyan
-	color6  = #5e8d87
-	color14 = #8abeb7
+	color6  = #689d6a
+	color14 = #8ec07c
 
 	# white
-	color7  = #707880
-	color15 = #c5c8c6
-
+	color7  = #a89984
+	color15 = #ebdbb2
