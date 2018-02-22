@@ -8,7 +8,6 @@ packages=(
 	"fonts-font-awesome"			# Glyph font
 
 	"zsh"											# Shell Replacement
-	"zsh-syntax-highlighting"	# Zsh plugin
 
 	"firefox"									# Web Browser
 	
