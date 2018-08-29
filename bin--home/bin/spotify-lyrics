@@ -1,0 +1,3 @@
+#/bin/bash
+
+python ~/bin/spotify-lyrics.py

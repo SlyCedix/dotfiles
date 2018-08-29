@@ -1,7 +1,7 @@
 #!/bin/sh
 FG=$(xrdb -query -all | grep '*foreground' | sed 's/^[^#]*#/#/')
 BG=$(xrdb -query -all | grep '*background' | sed 's/^[^#]*#/#/')
-FGALT=$(xrdb -query -all | grep '*color20' | sed 's/^[^#]*#/#/')
+FGALT=$(xrdb -query -all | grep '*foreground' | sed 's/^[^#]*#/#/')
 N=$(xrdb -query -all | grep '*color4' | sed 's/^[^#]*#/#/')
 A=$(xrdb -query -all | grep '*color2' | sed 's/^[^#]*#/#/')
 U=$(xrdb -query -all | grep '*color9' | sed 's/^[^#]*#/#/')

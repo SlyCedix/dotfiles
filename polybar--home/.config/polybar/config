@@ -18,7 +18,7 @@ border-color = $00000000
 width = 100%
 height = 24px
 
-modules-right = date
+modules-right = battery date
 modules-center = xwindow
 modules-left = i3
 
@@ -28,9 +28,13 @@ foreground = ${colors.fg}
 underline-size = 1
 underline-color = ${colors.fg}
 
-font-0 = xos4terminus:size=10;1
-font-1 = TakaoGothic:weight=bold:size=12;1
-font-2 = fontawesome:size=12;2
+font-0 = xos4terminus:size=10;0
+font-1 = TakaoGothic:weight=bold:size=12;0
+font-2 = fontawesome:pixelsize=12;1
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;2"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;2"
+tray-position = right
 
 [module/xwindow]
 type = internal/xwindow
@@ -65,10 +69,16 @@ label-urgent-background = ${colors.gray}
 label-urgent-padding = 2
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 10;
-ws-icon-default = 
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
 
 [module/date]
 type = internal/date
@@ -80,5 +90,39 @@ format-underline = ${colors.fg}
 format-background = ${colors.bg}
 format-foreground = ${colors.fg}
 format-padding = 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.fg}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.fg}
+format-discharging-padding = 1
+
+format-full =   <label-full>
+format-full-underline = ${self.format-charging-underline}
+format-full-overline = ${self.format-charging-underline}
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.fg}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.fg}
+animation-charging-framerate = 500
 
 ; vim:ft=dosini

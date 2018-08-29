@@ -60,6 +60,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	" Colorscheme
 	Plug 'morhetz/gruvbox'
+	
+	" vim-markdown-preview
+	Plug 'suan/vim-instant-markdown'
 call plug#end()
 
 " Plugin Settings
