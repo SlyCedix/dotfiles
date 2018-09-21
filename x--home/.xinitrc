@@ -1,3 +1,2 @@
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-
-exec i3
+PATH=$HOME/bin:$PATH
