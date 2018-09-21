@@ -69,6 +69,7 @@ call plug#end()
 "
 " NERDTree
 let NERDTreeShowHidden = 1
+let NERDTreeHijackNetrw = 1
 " Incsearch
 let g:incsearch#auto_nohlsearch = 1
 " Deoplete
@@ -76,7 +77,6 @@ let g:deoplete#enable_at_startup = 1
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
-
 
 " Settings
 "
