@@ -120,5 +120,8 @@ exec --no-startup-id feh --bg-scale ~/.wallpapers
 exec --no-startup-id nm-applet
 exec --no-startup-id volctl
 
+# enforce floating
+for_window [class="Thunar"] floating enable
+
 new_window none
 new_float none

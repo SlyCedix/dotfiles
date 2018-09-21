@@ -11,7 +11,7 @@ rofi -show run -modi run -location 0 -width 30 \
 		 -separator-style none -font "input 10" -columns 1 -bw 0 \
 		 -disable-history \
 		 -hide-scrollbar \
-		 -color-window "$BG, $BG, $FG" \
+		 -color-window "$FG, $FG, $FG" \
 		 -color-normal "$FG, $BG, $FG, $N, $FGALT" \
 		 -color-active "$BG, $FGALT, $BG, $A, $FGALT" \
 		 -color-urgent "$BG, $FGALT, $BG, $U, $FGALT" \
