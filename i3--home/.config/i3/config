@@ -4,6 +4,11 @@ font pango:monospace 8
 
 floating_modifier $mod
 
+set_from_resource $bg background
+set_from_resource $fg foreground
+set_from_resource $grey color8
+set_from_resource $red color9
+
 # Gaps settings
 for_window [class="^.*"] border pixel 1
 gaps inner 10
@@ -84,6 +89,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors									border		backgr		text		indic		child
+client.focused						$fg				$fg				$bg			$grey   $fg
+client.focused_inactive		$bg				$fg				$bg			$grey		$bg
+client.unfocused					$bg				$bg				$fg			$grey		$bg
+client.urgent							$red			$bg				$fg			$red		$bg
+client.placeholder				$bg				$bg				$bg			$grey		$bg
+client.background					$bg
+
 # startup
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xcompmgr 
@@ -94,6 +107,7 @@ exec --no-startup-id volctl
 # enforce floating
 for_window [class="Thunar"] floating enable
 for_window [title="Figure*"] floating enable
+for_window [title="Discord Updater"] floating enable
 
 new_window none
 new_float none
