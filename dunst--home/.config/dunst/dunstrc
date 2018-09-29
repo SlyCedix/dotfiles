@@ -1,0 +1,42 @@
+[global]
+font = Input Mono 10
+markup = yes
+format = "%s %p\n%b"
+sort = yes
+indicate_hidden = yes
+alignment = center
+bounce_freq = 5
+show_age_threshold = -1
+word_wrap = n0
+ignore_newline = no
+geometry = "0x5+12+42"
+shrink = no
+transparency = 10
+idle_threshold = 0
+monitor = 0
+folow = mouse
+sticky_history = no
+history_length = 20
+show_indicators = no
+line_height = 1
+separator_height = 2
+padding = 8
+separator_color =frame
+startup_notification = false
+browser = /usr/bin/firefox -new-tab
+icon_position = off
+
+[base16_low]
+    msg_urgency = low
+    background = "#282a2e"
+    foreground = "#969896"
+
+[base16_normal]
+    msg_urgency = normal
+    background = "#373b41"
+    foreground = "#c5c8c6"
+
+[base16_critical]
+    msg_urgency = critical
+    background = "#cc6666"
+    foreground = "#e0e0e0"
