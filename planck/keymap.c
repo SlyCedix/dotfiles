@@ -12,17 +12,17 @@
 #define ALT_LCH MT(MOD_LALT, S(KC_COMM))
 #define ALT_RCH MT(MOD_RALT, S(KC_DOT))
 #define HYP_RCB MT(MOD_HYPR, S(KC_RBRC))
-#define WIN_LBR LT(CONTROL, KC_RBRC)
-#define WS1 LGUI(KC_1);
-#define WS2 LGUI(KC_2);
-#define WS3 LGUI(KC_3);
-#define WS4 LGUI(KC_4);
-#define WS5 LGUI(KC_5);
-#define WS6 LGUI(KC_6);
-#define WS7 LGUI(KC_7);
-#define WS8 LGUI(KC_8);
-#define WS9 LGUI(KC_9);
-#define WS0 LGUI(KC_0);
+#define WIN_RBR LT(CONTROL, KC_RBRC)
+#define WS1 LGUI(KC_1)
+#define WS2 LGUI(KC_2)
+#define WS3 LGUI(KC_3)
+#define WS4 LGUI(KC_4)
+#define WS5 LGUI(KC_5)
+#define WS6 LGUI(KC_6)
+#define WS7 LGUI(KC_7)
+#define WS8 LGUI(KC_8)
+#define WS9 LGUI(KC_9)
+#define WS0 LGUI(KC_0)
 #define MUS_PRV MEH(KC_F13)
 #define MUS_PLY MEH(KC_F14)
 #define MUS_NXT MEH(KC_F15)
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */	
 	[NUM] = KEYMAP(
-		_______,	KC_F1,		KC_F2,		KC_F3,		KC_F4,		KC_F5,		KC_F6,		KC_F7,		KC_F8,		KC_F9,		KC_10,		_______,
+		_______,	KC_F1,		KC_F2,		KC_F3,		KC_F4,		KC_F5,		KC_F6,		KC_F7,		KC_F8,		KC_F9,		KC_F10,		_______,
 		_______,	KC_1,			KC_2,			KC_3,			KC_4,			KC_5,			KC_6,			KC_7,			KC_8,			KC_9,			KC_0,			_______,
 		_______,	KC_MINS,	KC_EQL,		KC_GRV,		KC_BSLS,	S(KC_A),	S(KC_B),	S(KC_C),	S(KC_D),	S(KC_E),	S(KC_F),	_______,
 		_______,	_______,	_______,	_______,	_______,	_______,	_______,	_______,	_______,	_______,	_______,	_______
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */	
 	[NUM_SHFT] = KEYMAP(
-		_______,	KC_F11,			KC_F12,			KC_F13,			KC_F14,			KC_F15,		KC_F16,		KC_F17,		KC_F18,		KC_F19,		KC_20,		_______,
+		_______,	KC_F11,			KC_F12,			KC_F13,			KC_F14,			KC_F15,		KC_F16,		KC_F17,		KC_F18,		KC_F19,		KC_F20,		_______,
 		_______,	S(KC_1),		S(KC_2),		S(KC_3),		S(KC_4),		S(KC_5),	S(KC_6),	S(KC_7),	S(KC_8),	S(KC_9),	S(KC_0),	_______,
 		_______,	S(KC_MINS),	S(KC_EQL),	S(KC_GRV),	S(KC_BSLS), _______,	_______,	_______,	_______,	_______,	_______,	_______,
 		_______,	_______,		_______,		_______,		_______,		_______,	_______,	_______,	_______,	_______,	_______,	_______
@@ -147,4 +147,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		_______,	_______,	_______,	_______,	_______,	RESET,		RESET,		_______,	_______,	_______,	_______,	_______
 
 	)
-}
+};
