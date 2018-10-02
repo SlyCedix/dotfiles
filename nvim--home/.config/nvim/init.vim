@@ -47,7 +47,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'hail2u/vim-css3-syntax'
 	" LESS
 	Plug 'groenewege/vim-less'
-	" Stylus
+  " Stylus
 	Plug 'wavded/vim-stylus'
 	" JS
 	Plug 'pangloss/vim-javascript'
@@ -63,6 +63,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	
 	" vim-markdown-preview
 	Plug 'suan/vim-instant-markdown'
+	" Discord Rich Presence
+	Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 " Plugin Settings
@@ -116,7 +118,7 @@ set shiftwidth=2
 " Tab in insert mode
 set softtabstop=2
 " Remove spaces like tabs
-set smarttab
+set expandtab
 
 " Color settings
 let g:hybrid_custom_term_colors = 1
