@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x6060
 #define MANUFACTURER    OLKB
 #define PRODUCT         Planck
-#define DESCRIPTION			Rev. 6 Planck Keyboard
+#define DESCRIPTION     Rev. 6 Planck Keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 4
