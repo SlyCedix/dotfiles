@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export DISPLAY=:0
 export XAUTHORITY="/home/sly/.Xauthority"
@@ -10,5 +10,3 @@ if [ $1 -eq 1 ]; then
 else
 	xinput enable $TOUCHPADDEVICE
 fi
-
-echo "Called by udev with $1" >> $HOME/tmp
