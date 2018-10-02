@@ -1,18 +1,19 @@
 #include "planck.h"
-#define PLANCK_YES
+
+extern keymap_config_t keymap_config;
 
 // Defines
 #define CTR_ESC MT(MOD_LCTL, KC_ESC)
-#define NAV_SMC LT(NAV, KC_SCLN)
+#define NAV_SMC LT(_NAV, KC_SCLN)
 #define CTR_RET MT(MOD_RCTL, KC_RETURN)
 #define SHF_LPR MT(MOD_LSFT, S(KC_9))
 #define SHF_RPR MT(MOD_RSFT, S(KC_0))
-#define WIN_LBR LT(CONTROL, KC_LBRC)
+#define WIN_LBR LT(_CONTROL, KC_LBRC)
 #define HYP_LCB MT(MOD_HYPR, S(KC_LBRC))
 #define ALT_LCH MT(MOD_LALT, S(KC_COMM))
 #define ALT_RCH MT(MOD_RALT, S(KC_DOT))
 #define HYP_RCB MT(MOD_HYPR, S(KC_RBRC))
-#define WIN_RBR LT(CONTROL, KC_RBRC)
+#define WIN_RBR LT(_CONTROL, KC_RBRC)
 #define WS1 LGUI(KC_1)
 #define WS2 LGUI(KC_2)
 #define WS3 LGUI(KC_3)
@@ -34,12 +35,14 @@
 #define TERM LGUI(KC_RETURN)
 
 //Layers
-#define QWERTY      0
-#define NUM         1
-#define NUM_SHFT    2
-#define CONTROL     3
-#define NAV         4
-#define DEBUG       6
+enum planck_layers {
+  _QWERTY,
+  _LOWER,
+  _UPPER,
+  _CONTROL,
+  _NAV,
+  _DEBUG
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -55,11 +58,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                         |     |                                         |     |
 *                         {     <                                         >     }
 */
-  [QWERTY] = KEYMAP(
-    KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,         KC_I,     KC_O,     KC_P,     KC_QUOT,
-    CTR_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,         KC_K,     KC_L,     NAV_SMC,  CTR_RET,
-    SHF_LPR,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,         KC_COMM,  KC_DOT,   KC_SLSH,  SHF_RPR,
-    WIN_LBR,  HYP_LCB,  ALT_LCH,  KC_LGUI,  MO(NUM),  KC_SPC,   KC_SPC,   MO(NUM_SHFT), KC_RGUI,  ALT_RCH,  HYP_RCB,  WIN_RBR
+  [_QWERTY] = LAYOUT_planck_grid(
+    KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,       KC_T,     KC_Y,     KC_U,         KC_I,     KC_O,     KC_P,     KC_QUOT,
+    CTR_ESC,  KC_A,     KC_S,     KC_D,     KC_F,       KC_G,     KC_H,     KC_J,         KC_K,     KC_L,     NAV_SMC,  CTR_RET,
+    SHF_LPR,  KC_Z,     KC_X,     KC_C,     KC_V,       KC_B,     KC_N,     KC_M,         KC_COMM,  KC_DOT,   KC_SLSH,  SHF_RPR,
+    WIN_LBR,  HYP_LCB,  ALT_LCH,  KC_LGUI,  MO(_LOWER), KC_SPC,   KC_SPC,   MO(_UPPER),   KC_RGUI,  ALT_RCH,  HYP_RCB,  WIN_RBR
   ),
 /*
 *                ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
@@ -72,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                │     │     │     │     │     │   BKSPC   │     │     │     │     │     │
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */  
-  [NUM] = KEYMAP(
+  [_LOWER] = LAYOUT_planck_grid(
     _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   _______,
     _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     _______,
     _______,  KC_MINS,  KC_EQL,   KC_GRV,   KC_BSLS,  S(KC_A),  S(KC_B),  S(KC_C),  S(KC_D),  S(KC_E),  S(KC_F),  _______,
@@ -89,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                │     │     │     │     │     │    DEL    │     │     │     │     │     │
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */  
-  [NUM_SHFT] = KEYMAP(
+  [_UPPER] = LAYOUT_planck_grid(
     _______,  KC_F11,     KC_F12,     KC_F13,     KC_F14,     KC_F15,   KC_F16,   KC_F17,   KC_F18,   KC_F19,   KC_F20,   _______,
     _______,  S(KC_1),    S(KC_2),    S(KC_3),    S(KC_4),    S(KC_5),  S(KC_6),  S(KC_7),  S(KC_8),  S(KC_9),  S(KC_0),  _______,
     _______,  S(KC_MINS), S(KC_EQL),  S(KC_GRV),  S(KC_BSLS), _______,  _______,  _______,  _______,  _______,  _______,  _______,
@@ -106,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                │     │ Prv │ Ply │ Nxt │Bri- │           │Bri+ │Mute │Vol- │Vol+ │     │
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */
-  [CONTROL] = KEYMAP(
+  [_CONTROL] = LAYOUT_planck_grid(
     _______,  KC_BTN1,  KC_BTN3,  KC_BTN2,  _______,  _______,  LGUI(KC_H), LGUI(KC_SPC),   LGUI(KC_P),     LGUI(KC_F),   LGUI(KC_N),     _______,
     _______,  KC_MS_L,  KC_MS_D,  KC_MS_U,  KC_MS_R,  _______,  LGUI(KC_V), LGUI(KC_LEFT),  LGUI(KC_DOWN),  LGUI(KC_UP),  LGUI(KC_RGHT),  TERM,
     _______,  WS1,      WS2,      WS3,      WS4,      WS5,      WS6,        WS7,            WS8,            WS9,          WS0,            _______,
@@ -123,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                │     │     │     │     │     │           │     │     │     │     │     │
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */
-  [NAV] = KEYMAP(
+  [_NAV] = LAYOUT_planck_grid(
     _______,  _______,  _______,  _______,  _______,  _______,  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
@@ -140,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                │     │     │     │     │     │    RST    │     │     │     │     │     │
 *                └─────┴─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┴─────┘
 */
-  [DEBUG] = KEYMAP(
+  [_DEBUG] = LAYOUT_planck_grid(
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
