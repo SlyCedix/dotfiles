@@ -4,3 +4,6 @@
 [submodule "planck/qmk_firmware"]
 	path = planck/qmk_firmware
 	url = https://github.com/qmk/qmk_firmware
+[submodule "zsh--home/.oh-my-zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh--home/.oh-my-zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
