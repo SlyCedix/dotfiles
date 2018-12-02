@@ -59,7 +59,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-scripts/c.vim'
 
 	" Colorscheme
-	Plug 'morhetz/gruvbox'
+	Plug 'Soares/base16.nvim'
 	
 	" vim-markdown-preview
 	Plug 'suan/vim-instant-markdown'
@@ -78,7 +78,7 @@ let g:incsearch#auto_nohlsearch = 1
 let g:deoplete#enable_at_startup = 1
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_ashes'
 
 " Settings
 "
@@ -125,7 +125,7 @@ let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme ashes
 
 
 " Binds

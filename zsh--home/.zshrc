@@ -10,9 +10,7 @@ export ZSH_CUSTOM=$HOME/.zsh
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_MODE='awesome-fontconfig'
+ZSH_THEME="spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -99,3 +97,43 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rm="rm -i"
+alias tmux="tmux -u"
+
+SPACESHIP_PROMPT_ORDER=(
+  #user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  #hg            # Mercurial section (hg_branch  + hg_status)
+  package       # Package version
+  kubecontext   # Kubectl context section
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_RPROMPT_ORDER=(
+	#time          #
+)
+
+# PROMPT
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=false
+SPACESHIP_PROMPT_PREFIXES_SHOW=false
+SPACESHIP_PROMPT_SUFFIXES_SHOW=true
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_COLOR=red
+SPACESHIP_PROMPT_DEFAULT_PREFIX="${SPACESHIP_PROMPT_DEFAULT_PREFIX="via "}"
+SUFFIX="${SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "}"
+SPACESHIP_DIR_COLOR=red
+SPACESHIP_USER_COLOR=red
+SPACESHIP_CHAR_COLOR_SUCCESS=red
+SPACESHIP_CHAR_COLOR_SECONDARY=red
+
+if [[ $TERM != "screen-256color" ]] ; then
+  neofetch
+fi

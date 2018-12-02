@@ -7,3 +7,6 @@
 [submodule "zsh--home/.oh-my-zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh--home/.oh-my-zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "rofi--home/.local/share/rofi"]
+	path = rofi--home/.local/share/rofi
+	url = https://github.com/0xdec/base16-rofi.git

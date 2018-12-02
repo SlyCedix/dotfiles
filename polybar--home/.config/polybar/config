@@ -1,7 +1,7 @@
 [colors]
 fg = ${xrdb:*.foreground}
 bg = ${xrdb:*.background}
-gray = ${xrdb:*.color7}
+gray = ${xrdb:*.color5}
 red = ${xrdb:*.color9}
 
 [bar/bar]
