@@ -111,5 +111,6 @@ for_window [title="Figure*"] floating enable
 for_window [title="Discord Updater"] floating enable
 for_window [class="(C|c)hromium" window_role="pop-up"] floating enable
 for_window [class="copyq"] floating enable
+for_window [class="(T|t)ermite"] floating enable
 new_window none
 new_float none
