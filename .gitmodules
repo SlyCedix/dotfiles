@@ -10,3 +10,6 @@
 [submodule "rofi--home/.local/share/rofi"]
 	path = rofi--home/.local/share/rofi
 	url = https://github.com/0xdec/base16-rofi.git
+[submodule "startpage"]
+	path = startpage
+	url = https://github.com/slycedix/SlyCedix.github.io/
