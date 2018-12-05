@@ -22,6 +22,8 @@ bindsym $mod+Shift+q kill
 
 # start rofi 
 bindsym $mod+d exec ~/.config/i3/rofi.sh
+bindsym Print --release exec screen
+bindsym $mod+Print --release exec screen -f
 
 # change focus
 bindsym $mod+h focus left
