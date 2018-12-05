@@ -1,0 +1,18 @@
+#!/bin/bash
+
+USERHASH=$(cat ~/bin/userhash.ignore)
+
+scrot 'currscrot.png' -e 'mv $f /tmp/'
+
+feh -F -x /tmp/currscrot.png &
+FEHPID=$!
+
+FILENAME=$(scrot -s -e 'echo $f')
+kill $FEHPID
+
+URL=$(curl -F "reqtype=fileupload" -F "userhash=$USERHASH" -F "fileToUpload=@$FILENAME" https://catbox.moe/user/api.php)
+
+mv $FILENAME ~/screenshots/
+
+echo $URL - ~/screenshots/$FILENAME >> ~/screenshots/index.txt
+copyq copy $URL
