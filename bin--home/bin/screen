@@ -1,18 +1,24 @@
 #!/bin/bash
 
-USERHASH=$(cat ~/bin/userhash.ignore)
+if [ -f ~/bin/userhash.ignore ]; then
+  USERHASH=$(cat ~/bin/userhash.ignore)
+  
+  if [ $1 = "-f" ]; then
+    FILENAME=$(scrot -e 'echo $f')
+  else
+    scrot 'currscrot.png' -e 'mv $f /tmp/'
+    feh -F -x /tmp/currscrot.png &
+    FEHPID=$!
 
-scrot 'currscrot.png' -e 'mv $f /tmp/'
+    FILENAME=$(scrot -s -e 'echo $f')
+    kill $FEHPID
+  fi
+  URL=$(curl -F "reqtype=fileupload" -F "userhash=$USERHASH" -F "fileToUpload=@$FILENAME" https://catbox.moe/user/api.php)
 
-feh -F -x /tmp/currscrot.png &
-FEHPID=$!
+  mv $FILENAME ~/screenshots/
 
-FILENAME=$(scrot -s -e 'echo $f')
-kill $FEHPID
-
-URL=$(curl -F "reqtype=fileupload" -F "userhash=$USERHASH" -F "fileToUpload=@$FILENAME" https://catbox.moe/user/api.php)
-
-mv $FILENAME ~/screenshots/
-
-echo $URL - ~/screenshots/$FILENAME >> ~/screenshots/index.txt
-copyq copy $URL
+  echo $URL - ~/screenshots/$FILENAME >> ~/screenshots/index.txt
+  copyq copy $URL
+else
+  echo "You must add your catbox.moe userhash to $HOME/bin/userhash.ignore"
+fi
