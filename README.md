@@ -1,20 +1,7 @@
 # Slycedix's dotfiles 
----
-
-Included:
-
-Scripts:
- - pipes.sh
- - spotify-lyrics.py
-
-Configs:
- - gtk
- - i3-gaps
- - polybar
- - neovim
- - termite
- - nvim
- - zsh
- - ranger
- - Xresources
- - neofetch
+Utilizes [tuckr](https://github.com/RaphGL/tuckr) for symlinking dotfiles
+```
+cargo install --git https://github.com/RaphGL/Tuckr.git
+tuckr add \*
+tuckr set \*
+```
