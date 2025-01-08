@@ -1,0 +1,136 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{f342e68c-e413-480c-b386-e80c66e24bb3}",
+    "newTabMenu": [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": {
+        "defaults": {
+            "colorScheme": "Catppuccin Macchiato",
+            "cursorShape": "underscore",
+            "experimental.retroTerminalEffect": false,
+            "font": {
+                "face": "Hack Nerd Font Mono"
+            },
+            "intenseTextStyle": "none"
+        },
+        "list": [
+            {
+                "commandline": "pwsh -ExecutionPolicy RemoteSigned",
+                "guid": "{f342e68c-e413-480c-b386-e80c66e24bb3}",
+                "hidden": false,
+                "icon": "https://raw.githubusercontent.com/TheFern2/windows-terminal-icons/refs/heads/main/icons/powershell7.png",
+                "name": "Windows PowerShell 7"
+            },
+            {
+                "commandline": "pwsh -ExecutionPolicy RemoteSigned",
+                "elevate": true,
+                "guid": "{6a7d087b-04dc-4bf9-8238-ef001fb3771d}",
+                "hidden": false,
+                "icon": "https://raw.githubusercontent.com/TheFern2/windows-terminal-icons/refs/heads/main/icons/powershell7.png",
+                "name": "Windows PowerShell 7 [Elavated]"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "elevate": true,
+                "guid": "{4223ee86-ee0a-469f-8f26-b28f4beb4e85}",
+                "hidden": false,
+                "name": "Command Prompt [Elevated]"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "background": "#24273A",
+            "black": "#494D64",
+            "blue": "#8AADF4",
+            "brightBlack": "#5B6078",
+            "brightBlue": "#8AADF4",
+            "brightCyan": "#8BD5CA",
+            "brightGreen": "#A6DA95",
+            "brightPurple": "#F5BDE6",
+            "brightRed": "#ED8796",
+            "brightWhite": "#A5ADCB",
+            "brightYellow": "#EED49F",
+            "cursorColor": "#F4DBD6",
+            "cyan": "#8BD5CA",
+            "foreground": "#CAD3F5",
+            "green": "#A6DA95",
+            "name": "Catppuccin Macchiato",
+            "purple": "#F5BDE6",
+            "red": "#ED8796",
+            "selectionBackground": "#5B6078",
+            "white": "#B8C0E0",
+            "yellow": "#EED49F"
+        }
+    ],
+    "theme": "Catppuccin Macchiato",
+    "themes": [
+        {
+            "name": "Catppuccin Macchiato",
+            "tab": {
+                "background": "#24273AFF",
+                "iconStyle": "default",
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "tabRow": {
+                "background": "#1E2030FF",
+                "unfocusedBackground": "#181926FF"
+            },
+            "window": {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
+                "useMica": false
+            }
+        }
+    ],
+    "useAcrylicInTabRow": false
+}
