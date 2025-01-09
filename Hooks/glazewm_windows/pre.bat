@@ -1,5 +1,2 @@
-mkdir %USERPROFILE%\.glzr
-mkdir %USERPROFILE%\.glzr\glazewm
-mkdir %USERPROFILE%\.glzr\zebar
-
-exit /b 0
+cd /D "%~dp0"
+pwsh -File ~zebarpre.ps1
