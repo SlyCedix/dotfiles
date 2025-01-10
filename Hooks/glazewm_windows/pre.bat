@@ -1,2 +1,2 @@
 cd /D "%~dp0"
-pwsh -File ~zebarpre.ps1
+pwsh -File ~pre.ps1

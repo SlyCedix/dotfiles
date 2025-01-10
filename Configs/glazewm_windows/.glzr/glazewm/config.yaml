@@ -307,6 +307,8 @@ binding_modes:
         bindings: ['alt+8']
       - commands: ['focus --workspace 1:9', 'wm-disable-binding-mode --name disp1']
         bindings: ['alt+9']
+      - commands: ['focus --workspace 1:0', 'wm-disable-binding-mode --name disp1']
+        bindings: ['alt+0']
       - commands: ['move --workspace 1:1', 'focus --workspace 1:1', 'wm-disable-binding-mode --name disp1']
         bindings: ['alt+shift+1']
       - commands: ['move --workspace 1:2', 'focus --workspace 1:2', 'wm-disable-binding-mode --name disp1']
@@ -325,6 +327,8 @@ binding_modes:
         bindings: ['alt+shift+8']
       - commands: ['move --workspace 1:9', 'focus --workspace 1:9', 'wm-disable-binding-mode --name disp1']
         bindings: ['alt+shift+9']
+      - commands: ['move --workspace 1:0', 'focus --workspace 1:0', 'wm-disable-binding-mode --name disp1']
+        bindings: ['alt+shift+0']
       - commands: ['wm-disable-binding-mode --name disp1']
         bindings: ['escape', 'enter']
 
@@ -348,6 +352,8 @@ binding_modes:
       bindings: ['alt+8']
     - commands: ['focus --workspace 2:9', 'wm-disable-binding-mode --name disp2']
       bindings: ['alt+9']
+    - commands: ['focus --workspace 2:0', 'wm-disable-binding-mode --name disp2']
+      bindings: ['alt+0']
     - commands: ['move --workspace 2:1', 'focus --workspace 2:1', 'wm-disable-binding-mode --name disp2']
       bindings: ['alt+shift+1']
     - commands: ['move --workspace 2:2', 'focus --workspace 2:2', 'wm-disable-binding-mode --name disp2']
@@ -366,6 +372,8 @@ binding_modes:
       bindings: ['alt+shift+8']
     - commands: ['move --workspace 2:9', 'focus --workspace 2:9', 'wm-disable-binding-mode --name disp2']
       bindings: ['alt+shift+9']
+    - commands: ['move --workspace 2:0', 'focus --workspace 2:0', 'wm-disable-binding-mode --name disp2']
+      bindings: ['alt+shift+0']
     - commands: ['wm-disable-binding-mode --name disp2']
       bindings: ['escape', 'enter']
 
@@ -408,8 +416,8 @@ keybindings:
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
-  - commands: ['wm-toggle-pause']
-    bindings: ['alt+shift+p']
+  # - commands: ['wm-toggle-pause']
+  #   bindings: ['alt+shift+p']
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.
@@ -455,7 +463,7 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec cmd']
+  - commands: ['shell-exec wt']
     bindings: ['alt+enter']
 
   # Focus the next/previous active workspace defined in `workspaces` config.

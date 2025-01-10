@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -16,7 +18,8 @@
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -33,22 +36,27 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{f342e68c-e413-480c-b386-e80c66e24bb3}",
-    "newTabMenu": [
+    "newTabMenu": 
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "colorScheme": "Catppuccin Macchiato",
             "cursorShape": "underscore",
             "experimental.retroTerminalEffect": false,
-            "font": {
+            "font": 
+            {
                 "face": "Hack Nerd Font Mono"
             },
             "intenseTextStyle": "none"
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "pwsh -ExecutionPolicy RemoteSigned",
                 "guid": "{f342e68c-e413-480c-b386-e80c66e24bb3}",
@@ -81,10 +89,29 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": true,
                 "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{acbebdab-6bf9-5b8f-b9e0-3021501346ec}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{06d3c83f-be06-5466-baa3-b01c2c4eb821}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#24273A",
             "black": "#494D64",
@@ -110,20 +137,24 @@
         }
     ],
     "theme": "Catppuccin Macchiato",
-    "themes": [
+    "themes": 
+    [
         {
             "name": "Catppuccin Macchiato",
-            "tab": {
+            "tab": 
+            {
                 "background": "#24273AFF",
                 "iconStyle": "default",
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "tabRow": {
+            "tabRow": 
+            {
                 "background": "#1E2030FF",
                 "unfocusedBackground": "#181926FF"
             },
-            "window": {
+            "window": 
+            {
                 "applicationTheme": "dark",
                 "experimental.rainbowFrame": false,
                 "frame": null,
