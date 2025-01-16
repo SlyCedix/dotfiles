@@ -164,11 +164,11 @@ workspaces:
     keep_alive: true
     bind_to_monitor: 0
   - name: "1:9"
-    display_name: "IX:Expandable"
+    display_name: "IX"
     keep_alive: true
     bind_to_monitor: 0
   - name: "1:0"
-    display_name: "X:Outlook"
+    display_name: "X"
     keep_alive: true
     bind_to_monitor: 0
 
@@ -205,11 +205,11 @@ workspaces:
     keep_alive: true
     bind_to_monitor: 1
   - name: "2:9"
-    display_name: "IX:Hours"
+    display_name: "IX"
     keep_alive: true
     bind_to_monitor: 1
   - name: "2:0"
-    display_name: "X:Firefox"
+    display_name: "X"
     keep_alive: true
     bind_to_monitor: 1
 
@@ -242,7 +242,6 @@ window_rules:
       - window_class: { equals: '#32770' } # Common class for floating windows
 
       - window_process: { equals: 'ESIMRP' }  # Expandable ERP
-        window_title: { regex: 'Attachments|Expandable Login' }
       
       - window_process: { equals: 'firefox'}
         window_title: { regex: 'Library|Extension: .*'}
