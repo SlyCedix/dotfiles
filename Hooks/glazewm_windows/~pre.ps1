@@ -6,16 +6,27 @@ try {
     git clone https://github.com/glzr-io/glazewm 
     pushd glazewm
 
-    cargo +nightly-gnu install wm --path packages/wm --features no_console --locked
-    cargo +nightly-gnu install watcher --path packages/watcher --features no_console --locked
+    cargo +nightly-gnu install wm --path packages/wm --locked
+    cargo +nightly-gnu install wm-cli --path packages/wm-cli --locked
+    cargo +nightly-gnu install wm-watcher --path packages/wm-watcher --locked
 
     popd
 
-    Remove-Item -Force -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\glazewm.lnk"
-    Remove-Item -Force -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\glazewm.lnk"
+    $decision = $Host.UI.PromptForChoice('GlazeWM', 'Create start menu shortcut?', ('&Yes', '&No'), 1)
+    if($decision -eq 0) {
+        if(Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\glazewm.lnk") {
+            Remove-Item -Force -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\glazewm.lnk"
+        }
+        Create-Shortcut $env:CARGO_HOME\bin\glazewm "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\glazewm"
+    }
 
-    Create-Shortcut $env:CARGO_HOME\bin\glazewm "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\glazewm"
-    Create-Shortcut $env:CARGO_HOME\bin\glazewm "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\glazewm"
+    $decision = $Host.UI.PromptForChoice('GlazeWM', 'Launch at startup?', ('&Yes', '&No'), 1)
+    if($decision -eq 0) {
+        if(Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\glazewm.lnk") {
+            Remove-Item -Force -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\glazewm.lnk"
+        }
+        Create-Shortcut $env:CARGO_HOME\bin\glazewm "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\glazewm"
+    }
 
     popd
 } finally {

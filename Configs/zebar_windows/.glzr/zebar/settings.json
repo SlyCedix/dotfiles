@@ -5,5 +5,9 @@
       "path": "neobrutal\\bar.zebar.json",
       "preset": "default"
     }
-  ]
+  ],
+  "weather": {
+    "latitude": 40,
+    "longitude": -83
+  }
 }

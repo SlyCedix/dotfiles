@@ -41,7 +41,7 @@ general:
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
-    enabled: true
+    enabled: false
 
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
@@ -58,7 +58,7 @@ general:
   # effect if `hide_method: 'hide'`.
   # - 'true': Show all windows (regardless of workspace).
   # - 'false': Only show windows from the currently shown workspaces.
-  show_all_in_taskbar: true
+  show_all_in_taskbar: false
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
@@ -81,7 +81,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: '#202040'
+      color: '#808070'
 
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
@@ -93,7 +93,7 @@ window_effects:
     corner_style:
       enabled: true
       # Allowed values: 'square', 'rounded', 'small_rounded'.
-      style: 'square'
+      style: 'rounded'
 
   # Visual effects to apply to non-focused windows.
   other_windows:
@@ -103,8 +103,8 @@ window_effects:
     hide_title_bar:
       enabled: false
     corner_style:
-      enabled: false
-      style: 'square'
+      enabled: true
+      style: 'rounded'
 
 window_behavior:
   # New windows are created in this state whenever possible.
@@ -244,7 +244,10 @@ window_rules:
       - window_process: { equals: 'ESIMRP' }  # Expandable ERP
       
       - window_process: { equals: 'firefox'}
-        window_title: { regex: 'Library|Extension: .*'}
+        window_class: {equals: 'MozillaDialogClass' }
+
+      - window_process: { equals: 'firefox' }
+        window_title: { equals: 'Library'}
       
       - window_process: { equals: 'rider64'}
         window_class: { regex: 'SunAwtDialog' }
@@ -253,22 +256,18 @@ window_rules:
 
   - commands: ["move --workspace 1:9"]
     match:
-      - window_process: { equals: 'ESIMRP' }
+      - window_process: { equals: 'Discord'}
   
   - commands: ["move --workspace 1:0"]
     match:
       - window_process: { regex: 'olk|OUTLOOK' }
 
-  - commands: ["move --workspace 2:9"]
-    match:
-      - window_process: { equals: 'msedge' }
-        window_title: { regex: '/Sheets.*/'}
-
   - commands: ["move --workspace 2:0"]
     match:
-      - window_process: { equals: 'firefox' }
-        window_title: { not_regex: 'Library|Extension: .*'}
-      
+      - window_process: { equals: 'msedge' }
+        window_class: { equals: 'Chrome_WidgetWin_1'}
+        window_title: { regex: '^(Sheets.*|Paycor)$'}
+      - window_process: { equals: 'steam' }      
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -415,8 +414,8 @@ keybindings:
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
-  # - commands: ['wm-toggle-pause']
-  #   bindings: ['alt+shift+p']
+  - commands: ['wm-toggle-pause']
+    bindings: ['alt+shift+p']
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.

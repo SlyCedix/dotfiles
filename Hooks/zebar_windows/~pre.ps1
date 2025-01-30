@@ -35,12 +35,13 @@ try {
 
     popd
 
-
-    if(Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar.lnk") {
-        Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar.lnk" -Confirm -Force
+    $decision = $Host.UI.PromptForChoice('Zebar', 'Create start menu shortcut?', ('&Yes', '&No'), 1)
+    if($decision -eq 0) {
+        if(Test-Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar.lnk") {
+            Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar.lnk" -Confirm -Force
+        }
+        Create-Shortcut $env:CARGO_HOME\bin\zebar "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar"
     }
-
-    Create-Shortcut $env:CARGO_HOME\bin\zebar "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Zebar"
 
     popd
 } finally {
